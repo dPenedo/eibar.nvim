@@ -1,142 +1,141 @@
-local colorscheme = require 'eibar.colorscheme'
-
+local colors = require('eibar.theme').setup()
 local M = {}
 
 function M.highlights(config)
-  local bg = config.transparent and 'NONE' or colorscheme.sidebarBackground
+  local bg = config.transparent and 'NONE' or colors.sidebarBg
   return {
     background = { bg = bg },
-    buffer_visible = { fg = colorscheme.lineNumberText, bg = bg },
+    buffer_visible = { fg = colors.lineNumberText, bg = bg },
     buffer_selected = {
-      fg = colorscheme.mainText,
-      bg = colorscheme.editorBackground,
+      fg = colors.mainText,
+      bg = colors.editorBg,
     },
     duplicate = {
-      fg = colorscheme.mainText,
+      fg = colors.mainText,
       bg = bg,
       italic = config.italics.bufferline or false,
     },
     duplicate_visible = {
-      fg = colorscheme.mainText,
+      fg = colors.mainText,
       bg = bg,
       italic = config.italics.bufferline or false,
     },
     duplicate_selected = {
-      fg = colorscheme.mainText,
-      bg = colorscheme.editorBackground,
+      fg = colors.mainText,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
 
-    tab = { fg = colorscheme.mainText, bg = bg },
+    tab = { fg = colors.mainText, bg = bg },
     tab_selected = {
-      fg = colorscheme.mainText,
-      bg = colorscheme.editorBackground,
+      fg = colors.mainText,
+      bg = colors.editorBg,
     },
-    tab_close = { fg = colorscheme.syntaxError, bg = bg },
+    tab_close = { fg = colors.syntaxError, bg = bg },
     indicator_selected = {
-      fg = colorscheme.syntaxFunction,
-      bg = colorscheme.editorBackground,
+      fg = colors.syntaxFunction,
+      bg = colors.editorBg,
       bold = true,
     },
 
-    separator = { fg = colorscheme.editorBackground, bg = bg },
+    separator = { fg = colors.editorBg, bg = bg },
     separator_selected = {
-      fg = colorscheme.editorBackground,
-      bg = colorscheme.editorBackground,
+      fg = colors.editorBg,
+      bg = colors.editorBg,
     },
-    separator_visible = { fg = colorscheme.editorBackground, bg = bg },
-    offset_separator = { fg = colorscheme.editorBackground, bg = bg },
-    tab_separator = { fg = colorscheme.editorBackground, bg = bg },
+    separator_visible = { fg = colors.editorBg, bg = bg },
+    offset_separator = { fg = colors.editorBg, bg = bg },
+    tab_separator = { fg = colors.editorBg, bg = bg },
     tab_separator_selected = {
-      fg = colorscheme.editorBackground,
-      bg = colorscheme.editorBackground,
+      fg = colors.editorBg,
+      bg = colors.editorBg,
     },
 
-    close_button = { fg = colorscheme.lineNumberText, bg = bg },
-    close_button_visible = { fg = colorscheme.syntaxError, bg = bg },
+    close_button = { fg = colors.lineNumberText, bg = bg },
+    close_button_visible = { fg = colors.syntaxError, bg = bg },
     close_button_selected = {
-      fg = colorscheme.syntaxError,
-      bg = colorscheme.editorBackground,
+      fg = colors.syntaxError,
+      bg = colors.editorBg,
     },
 
     fill = { bg = bg },
 
-    numbers = { fg = colorscheme.lineNumberText, bg = bg },
-    numbers_visible = { fg = colorscheme.lineNumberText, bg = bg },
+    numbers = { fg = colors.lineNumberText, bg = bg },
+    numbers_visible = { fg = colors.lineNumberText, bg = bg },
     numbers_selected = {
-      fg = colorscheme.mainText,
-      bg = colorscheme.editorBackground,
+      fg = colors.mainText,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
 
-    error = { fg = colorscheme.syntaxError, bg = bg },
-    error_visible = { fg = colorscheme.syntaxError, bg = bg },
+    error = { fg = colors.syntaxError, bg = bg },
+    error_visible = { fg = colors.syntaxError, bg = bg },
     error_selected = {
-      fg = colorscheme.syntaxError,
-      bg = colorscheme.editorBackground,
+      fg = colors.syntaxError,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
-    error_diagnostic = { fg = colorscheme.syntaxError, bg = bg },
-    error_diagnostic_visible = { fg = colorscheme.syntaxError, bg = bg },
+    error_diagnostic = { fg = colors.syntaxError, bg = bg },
+    error_diagnostic_visible = { fg = colors.syntaxError, bg = bg },
     error_diagnostic_selected = {
-      fg = colorscheme.syntaxError,
-      bg = colorscheme.editorBackground,
+      fg = colors.syntaxError,
+      bg = colors.editorBg,
     },
 
-    warning = { fg = colorscheme.warningEmphasis, bg = bg },
-    warning_visible = { fg = colorscheme.warningEmphasis, bg = bg },
+    warning = { fg = colors.warningEmphasis, bg = bg },
+    warning_visible = { fg = colors.warningEmphasis, bg = bg },
     warning_selected = {
-      fg = colorscheme.warningEmphasis,
-      bg = colorscheme.editorBackground,
+      fg = colors.warningEmphasis,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
-    warning_diagnostic = { fg = colorscheme.warningEmphasis, bg = bg },
-    warning_diagnostic_visible = { fg = colorscheme.warningEmphasis, bg = bg },
+    warning_diagnostic = { fg = colors.warningEmphasis, bg = bg },
+    warning_diagnostic_visible = { fg = colors.warningEmphasis, bg = bg },
     warning_diagnostic_selected = {
-      fg = colorscheme.warningEmphasis,
-      bg = colorscheme.editorBackground,
+      fg = colors.warningEmphasis,
+      bg = colors.editorBg,
     },
 
-    info = { fg = colorscheme.syntaxFunction, bg = bg },
-    info_visible = { fg = colorscheme.syntaxFunction, bg = bg },
+    info = { fg = colors.syntaxFunction, bg = bg },
+    info_visible = { fg = colors.syntaxFunction, bg = bg },
     info_selected = {
-      fg = colorscheme.syntaxFunction,
-      bg = colorscheme.editorBackground,
+      fg = colors.syntaxFunction,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
-    info_diagnostic = { fg = colorscheme.syntaxFunction, bg = bg },
-    info_diagnostic_visible = { fg = colorscheme.syntaxFunction, bg = bg },
+    info_diagnostic = { fg = colors.syntaxFunction, bg = bg },
+    info_diagnostic_visible = { fg = colors.syntaxFunction, bg = bg },
     info_diagnostic_selected = {
-      fg = colorscheme.syntaxFunction,
-      bg = colorscheme.editorBackground,
+      fg = colors.syntaxFunction,
+      bg = colors.editorBg,
     },
 
-    hint = { fg = colorscheme.successText, bg = bg },
-    hint_visible = { fg = colorscheme.successText, bg = bg },
+    hint = { fg = colors.successText, bg = bg },
+    hint_visible = { fg = colors.successText, bg = bg },
     hint_selected = {
-      fg = colorscheme.successText,
-      bg = colorscheme.editorBackground,
+      fg = colors.successText,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
-    hint_diagnostic = { fg = colorscheme.successText, bg = bg },
-    hint_diagnostic_visible = { fg = colorscheme.successText, bg = bg },
+    hint_diagnostic = { fg = colors.successText, bg = bg },
+    hint_diagnostic_visible = { fg = colors.successText, bg = bg },
     hint_diagnostic_selected = {
-      fg = colorscheme.successText,
-      bg = colorscheme.editorBackground,
+      fg = colors.successText,
+      bg = colors.editorBg,
     },
 
-    diagnostic = { fg = colorscheme.lineNumberText, bg = bg },
-    diagnostic_visible = { fg = colorscheme.lineNumberText, bg = bg },
+    diagnostic = { fg = colors.lineNumberText, bg = bg },
+    diagnostic_visible = { fg = colors.lineNumberText, bg = bg },
     diagnostic_selected = {
-      fg = colorscheme.lineNumberText,
-      bg = colorscheme.editorBackground,
+      fg = colors.lineNumberText,
+      bg = colors.editorBg,
       italic = config.italics.bufferline or false,
     },
 
-    modified = { fg = colorscheme.warningText, bg = bg },
+    modified = { fg = colors.warningText, bg = bg },
     modified_selected = {
-      fg = colorscheme.warningText,
-      bg = colorscheme.editorBackground,
+      fg = colors.warningText,
+      bg = colors.editorBg,
     },
   }
 end
