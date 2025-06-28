@@ -12,7 +12,7 @@ local function set_terminal_colors()
 	vim.g.terminal_color_3 = colors.warningEmphasis
 	vim.g.terminal_color_4 = colors.syntaxFunction
 	vim.g.terminal_color_5 = colors.syntaxKeyword
-	vim.g.terminal_color_6 = colors.linkText
+	vim.g.terminal_color_6 = colors.lainoak
 	vim.g.terminal_color_7 = colors.mainText
 	vim.g.terminal_color_8 = colors.inactiveText
 	vim.g.terminal_color_9 = colors.errorText
@@ -36,9 +36,9 @@ local function set_groups()
 	local groups = {
 		-- base
 		Normal = { fg = colors.mainText, bg = bg },
-		LineNr = { fg = colors.lineNumberText },
+		LineNr = { fg = colors.lineNumberText, bg = colors.sidebarBg },
 		ColorColumn = {
-			bg = utils.shade(colors.linkText, 0.5, colors.editorBg),
+			bg = utils.shade(colors.lainoak, 0.5, colors.editorBg),
 		},
 		Conceal = {},
 		Cursor = { fg = colors.editorBg, bg = colors.mainText },
@@ -65,7 +65,7 @@ local function set_groups()
 			fg = colors.editorBg,
 		},
 		Substitute = { link = "IncSearch" },
-		CursorLineNr = { fg = colors.damasquinado },
+		CursorLineNr = { fg = colors.lainoak },
 		MatchParen = { fg = colors.syntaxError, bg = bg },
 		ModeMsg = { link = "Normal" },
 		MsgArea = { link = "Normal" },
@@ -97,7 +97,7 @@ local function set_groups()
 			bg = colors.editorBg,
 			fg = colors.emphasisText,
 		},
-		Search = { bg = utils.shade(colors.successText, 1.2, colors.bg) },
+		Search = { bg = utils.shade(colors.menuOptionBg, 1, colors.bg) },
 		SpellBad = { undercurl = true, sp = colors.syntaxError },
 		SpellCap = { undercurl = true, sp = colors.syntaxFunction },
 		SpellLocal = { undercurl = true, sp = colors.syntaxKeyword },
@@ -121,7 +121,7 @@ local function set_groups()
 			italic = config.italics.strings or false,
 		},
 		Character = { fg = colors.stringText },
-		Number = { fg = colors.specialKeyword },
+		Number = { fg = colors.untzaga },
 		Boolean = { fg = colors.untzaga },
 		Float = { link = "Number" },
 
@@ -131,7 +131,7 @@ local function set_groups()
 		Property = { fg = colors.sanBlas },
 		Field = { link = "Property" },
 		Parameter = { fg = colors.mainText },
-		Statement = { fg = colors.untzaga },
+		Statement = { fg = colors.keyword },
 		Conditional = { fg = colors.syntaxError },
 		-- Repeat = {},
 		Label = { fg = colors.syntaxFunction },
@@ -158,7 +158,7 @@ local function set_groups()
 		Special = { fg = colors.syntaxOperator },
 
 		SpecialChar = { fg = colors.syntaxError },
-		Tag = { fg = colors.stringText },
+		Tag = { fg = colors.lainoak },
 		Delimiter = { fg = colors.syntaxOperator },
 		-- SpecialComment = {},
 		Debug = { fg = colors.specialKeyword },
@@ -226,8 +226,8 @@ local function set_groups()
 		["@texcolorscheme.todo"] = { link = "Todo" },
 		["@comment"] = { link = "Comment" },
 		["@punctuation"] = { link = "Punctuation" },
-		["@punctuation.bracket"] = { fg = colors.cementBH },
-		["@punctuation.delimiter"] = { fg = colors.cementBH },
+		["@punctuation.bracket"] = { fg = colors.lainoak },
+		["@punctuation.delimiter"] = { fg = colors.lainoak },
 		["@punctuation.terminator.statement"] = { link = "Delimiter" },
 		["@punctuation.special"] = { fg = colors.untzaga },
 		["@punctuation.separator.keyvalue"] = { fg = colors.syntaxError },
@@ -260,18 +260,18 @@ local function set_groups()
 		["@method"] = { link = "Function" },
 		["@field"] = { link = "Property" },
 		["@property"] = { link = "Property" },
-		["@constructor"] = { fg = colors.sanAndres },
+		["@constructor"] = { fg = colors.lainoak },
 		-- ["@conditional"] = {},
 		-- ["@repeat"] = {},
 		["@label"] = { link = "Label" },
 		["@operator"] = { link = "Operator" },
 		["@exception"] = { link = "Exception" },
 		["@variable"] = {
-			fg = colors.sanAndres,
+			fg = colors.sanBlas,
 			italic = config.italics.variables or false,
 		},
 		["@variable.builtin"] = { fg = colors.sanBlas },
-		["@variable.member"] = { fg = colors.mainText },
+		["@variable.member"] = { fg = colors.lainoak },
 		["@variable.parameter"] = {
 			fg = colors.mainText,
 			italic = config.italics.variables or false,
