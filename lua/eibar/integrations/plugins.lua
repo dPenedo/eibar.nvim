@@ -38,6 +38,24 @@ function M.highlights()
 		CmpItemKindOperator = { fg = colors.syntaxError },
 		CmpItemKindTypeParameter = { fg = colors.syntaxError },
 		CmpItemKindCopilot = { fg = colors.lainoak },
+
+		-- IndentBlankline
+		IndentBlanklineChar = { fg = colors.floatingBg },
+		IndentBlanklineSpaceChar = { fg = colors.floatingBg },
+		IndentBlanklineSpaceCharBlankline = { fg = colors.floatingBg },
+		-- IndentBlanklineContextChar = { fg = theme.ui.special },
+		-- IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
+		IblIndent = { fg = colors.floatingBg },
+		IblWhitespace = { fg = colors.floatingBg },
+		-- IblScope = { fg = theme.ui.special },
+
+		-- SnacksIndent
+		SnacksIndent = {
+			fg = colors.floatingBg,
+		},
+		SnacksIndentScope = {
+			fg = colors.lainoak,
+		},
 	}
 end
 

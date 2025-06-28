@@ -1,5 +1,5 @@
 local bufferline = require("eibar.integrations.bufferline")
-local cmp = require("eibar.integrations.cmp")
+local plugins = require("eibar.integrations.plugins")
 local colors = require("eibar.theme").setup()
 local config = require("eibar.config")
 local utils = require("eibar.utils")
@@ -65,8 +65,8 @@ local function set_groups()
 			fg = colors.editorBg,
 		},
 		Substitute = { link = "IncSearch" },
-		CursorLineNr = { fg = colors.lainoak },
-		MatchParen = { fg = colors.syntaxError, bg = bg },
+		CursorLineNr = { fg = colors.untzaga },
+		MatchParen = { fg = colors.warningText, bg = colors.emphasizedBorder },
 		ModeMsg = { link = "Normal" },
 		MsgArea = { link = "Normal" },
 		-- MsgSeparator = {},
@@ -126,7 +126,7 @@ local function set_groups()
 		Float = { link = "Number" },
 
 		Identifier = { fg = colors.mainText },
-		Function = { fg = colors.syntaxKeyword },
+		Function = { fg = colors.syntaxFunction },
 		Method = { fg = colors.syntaxKeyword },
 		Property = { fg = colors.sanBlas },
 		Field = { link = "Property" },
@@ -154,12 +154,12 @@ local function set_groups()
 		-- Typedef = {},
 
 		Attribute = { link = "Character" },
-		Punctuation = { fg = colors.syntaxOperator },
+		Punctuation = { fg = colors.cementBH },
 		Special = { fg = colors.syntaxOperator },
 
 		SpecialChar = { fg = colors.syntaxError },
 		Tag = { fg = colors.lainoak },
-		Delimiter = { fg = colors.syntaxOperator },
+		Delimiter = { fg = colors.cementBH },
 		-- SpecialComment = {},
 		Debug = { fg = colors.specialKeyword },
 
@@ -226,7 +226,7 @@ local function set_groups()
 		["@texcolorscheme.todo"] = { link = "Todo" },
 		["@comment"] = { link = "Comment" },
 		["@punctuation"] = { link = "Punctuation" },
-		["@punctuation.bracket"] = { fg = colors.lainoak },
+		["@punctuation.bracket"] = { fg = colors.cementBH },
 		["@punctuation.delimiter"] = { fg = colors.lainoak },
 		["@punctuation.terminator.statement"] = { link = "Delimiter" },
 		["@punctuation.special"] = { fg = colors.untzaga },
@@ -323,7 +323,8 @@ local function set_groups()
 	}
 
 	-- integrations
-	groups = vim.tbl_extend("force", groups, cmp.highlights())
+	groups = vim.tbl_extend("force", groups, plugins.highlights())
+	groups = vim.tbl_extend("force", groups, plugins.highlights())
 
 	-- overrides
 	groups =
