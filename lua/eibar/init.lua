@@ -1,31 +1,9 @@
-local bufferline = require("eibar.integrations.bufferline")
-local plugins = require("eibar.integrations.plugins")
 local colors = require("eibar.theme").setup()
 local config = require("eibar.config")
 local utils = require("eibar.utils")
+local integrations = require("eibar.integrations")
+local terminal = require("eibar.integrations.terminal")
 local theme = {}
-local theme = {}
-
-local function set_terminal_colors()
-	vim.g.terminal_color_0 = colors.editorBg
-	vim.g.terminal_color_1 = colors.syntaxError
-	vim.g.terminal_color_2 = colors.successText
-	vim.g.terminal_color_3 = colors.warningEmphasis
-	vim.g.terminal_color_4 = colors.syntaxFunction
-	vim.g.terminal_color_5 = colors.syntaxKeyword
-	vim.g.terminal_color_6 = colors.lainoak
-	vim.g.terminal_color_7 = colors.mainText
-	vim.g.terminal_color_8 = colors.inactiveText
-	vim.g.terminal_color_9 = colors.errorText
-	vim.g.terminal_color_10 = colors.stringText
-	vim.g.terminal_color_11 = colors.warningText
-	vim.g.terminal_color_12 = colors.syntaxOperator
-	vim.g.terminal_color_13 = colors.syntaxError
-	vim.g.terminal_color_14 = colors.stringText
-	vim.g.terminal_color_15 = colors.commentText
-	vim.g.terminal_color_background = colors.editorBg
-	vim.g.terminal_color_foreground = colors.mainText
-end
 
 local function set_groups()
 	local bg = config.transparent and "NONE" or colors.editorBg
@@ -328,13 +306,17 @@ local function set_groups()
 		["@lsp.typemod.variable.readonly.python"] = { link = "@enum" },
 	}
 
-	-- integrations
-	groups = vim.tbl_extend("force", groups, plugins.highlights())
-	groups = vim.tbl_extend("force", groups, plugins.highlights())
+	-- Merge integrations
+	local ok, plugin_highlights = pcall(integrations.highlights)
+	if ok then
+		groups = vim.tbl_extend("force", groups, plugin_highlights)
+	else
+		vim.notify("Error loading plugin highlights: " .. plugin_highlights, vim.log.levels.ERROR)
+	end
 
-	-- overrides
-	groups =
-		vim.tbl_extend("force", groups, type(config.overrides) == "function" and config.overrides() or config.overrides)
+	-- Apply overrides
+	local user_overrides = type(config.overrides) == "function" and config.overrides() or config.overrides or {}
+	groups = vim.tbl_extend("force", groups, user_overrides)
 
 	for group, parameters in pairs(groups) do
 		vim.api.nvim_set_hl(0, group, parameters)
@@ -342,15 +324,15 @@ local function set_groups()
 end
 
 function theme.setup(values)
-	setmetatable(config, { __index = vim.tbl_extend("force", config.defaults, values) })
-
-	theme.bufferline = { highlights = {} }
-	theme.bufferline.highlights = bufferline.highlights(config)
+	values = values or {}
+	local merged_config = vim.tbl_extend("force", config.defaults, values)
+	for k, v in pairs(merged_config) do
+		config[k] = v
+	end
 end
-
 function theme.colorscheme()
 	if vim.version().minor < 8 then
-		vim.notify("Neovim 0.8+ is required for eibar colorscheme", vim.log.levels.ERROR, { title = "Min Theme" })
+		vim.notify("Neovim 0.8+ is required for eibar colorscheme", vim.log.levels.ERROR, { title = "eibar" })
 		return
 	end
 
@@ -363,8 +345,7 @@ function theme.colorscheme()
 	vim.o.termguicolors = true
 	vim.g.colors_name = "eibar"
 
-	set_terminal_colors()
-	set_groups()
+	set_groups() -- esto ya llama a terminal.set(colors)
 end
 
 return theme

@@ -1,143 +1,143 @@
-local colors = require('eibar.theme').setup()
 local M = {}
+local config = require("eibar.config")
 
-function M.highlights(config)
-  local bg = config.transparent and 'NONE' or colors.sidebarBg
-  return {
-    background = { bg = bg },
-    buffer_visible = { fg = colors.lineNumberText, bg = bg },
-    buffer_selected = {
-      fg = colors.mainText,
-      bg = colors.editorBg,
-    },
-    duplicate = {
-      fg = colors.mainText,
-      bg = bg,
-      italic = config.italics.bufferline or false,
-    },
-    duplicate_visible = {
-      fg = colors.mainText,
-      bg = bg,
-      italic = config.italics.bufferline or false,
-    },
-    duplicate_selected = {
-      fg = colors.mainText,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
+function M.get(c, opts)
+	local bg = config.transparent and "NONE" or c.sidebarBg
+	return {
+		background = { bg = bg },
+		buffer_visible = { fg = c.lineNumberText, bg = bg },
+		buffer_selected = {
+			fg = c.mainText,
+			bg = c.editorBg,
+		},
+		duplicate = {
+			fg = c.mainText,
+			bg = bg,
+			italic = config.italics.bufferline or false,
+		},
+		duplicate_visible = {
+			fg = c.mainText,
+			bg = bg,
+			italic = config.italics.bufferline or false,
+		},
+		duplicate_selected = {
+			fg = c.mainText,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
 
-    tab = { fg = colors.mainText, bg = bg },
-    tab_selected = {
-      fg = colors.mainText,
-      bg = colors.editorBg,
-    },
-    tab_close = { fg = colors.syntaxError, bg = bg },
-    indicator_selected = {
-      fg = colors.syntaxFunction,
-      bg = colors.editorBg,
-      bold = true,
-    },
+		tab = { fg = c.mainText, bg = bg },
+		tab_selected = {
+			fg = c.mainText,
+			bg = c.editorBg,
+		},
+		tab_close = { fg = c.syntaxError, bg = bg },
+		indicator_selected = {
+			fg = c.syntaxFunction,
+			bg = c.editorBg,
+			bold = true,
+		},
 
-    separator = { fg = colors.editorBg, bg = bg },
-    separator_selected = {
-      fg = colors.editorBg,
-      bg = colors.editorBg,
-    },
-    separator_visible = { fg = colors.editorBg, bg = bg },
-    offset_separator = { fg = colors.editorBg, bg = bg },
-    tab_separator = { fg = colors.editorBg, bg = bg },
-    tab_separator_selected = {
-      fg = colors.editorBg,
-      bg = colors.editorBg,
-    },
+		separator = { fg = c.editorBg, bg = bg },
+		separator_selected = {
+			fg = c.editorBg,
+			bg = c.editorBg,
+		},
+		separator_visible = { fg = c.editorBg, bg = bg },
+		offset_separator = { fg = c.editorBg, bg = bg },
+		tab_separator = { fg = c.editorBg, bg = bg },
+		tab_separator_selected = {
+			fg = c.editorBg,
+			bg = c.editorBg,
+		},
 
-    close_button = { fg = colors.lineNumberText, bg = bg },
-    close_button_visible = { fg = colors.syntaxError, bg = bg },
-    close_button_selected = {
-      fg = colors.syntaxError,
-      bg = colors.editorBg,
-    },
+		close_button = { fg = c.lineNumberText, bg = bg },
+		close_button_visible = { fg = c.syntaxError, bg = bg },
+		close_button_selected = {
+			fg = c.syntaxError,
+			bg = c.editorBg,
+		},
 
-    fill = { bg = bg },
+		fill = { bg = bg },
 
-    numbers = { fg = colors.lineNumberText, bg = bg },
-    numbers_visible = { fg = colors.lineNumberText, bg = bg },
-    numbers_selected = {
-      fg = colors.mainText,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
+		numbers = { fg = c.lineNumberText, bg = bg },
+		numbers_visible = { fg = c.lineNumberText, bg = bg },
+		numbers_selected = {
+			fg = c.mainText,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
 
-    error = { fg = colors.syntaxError, bg = bg },
-    error_visible = { fg = colors.syntaxError, bg = bg },
-    error_selected = {
-      fg = colors.syntaxError,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
-    error_diagnostic = { fg = colors.syntaxError, bg = bg },
-    error_diagnostic_visible = { fg = colors.syntaxError, bg = bg },
-    error_diagnostic_selected = {
-      fg = colors.syntaxError,
-      bg = colors.editorBg,
-    },
+		error = { fg = c.syntaxError, bg = bg },
+		error_visible = { fg = c.syntaxError, bg = bg },
+		error_selected = {
+			fg = c.syntaxError,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
+		error_diagnostic = { fg = c.syntaxError, bg = bg },
+		error_diagnostic_visible = { fg = c.syntaxError, bg = bg },
+		error_diagnostic_selected = {
+			fg = c.syntaxError,
+			bg = c.editorBg,
+		},
 
-    warning = { fg = colors.warningEmphasis, bg = bg },
-    warning_visible = { fg = colors.warningEmphasis, bg = bg },
-    warning_selected = {
-      fg = colors.warningEmphasis,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
-    warning_diagnostic = { fg = colors.warningEmphasis, bg = bg },
-    warning_diagnostic_visible = { fg = colors.warningEmphasis, bg = bg },
-    warning_diagnostic_selected = {
-      fg = colors.warningEmphasis,
-      bg = colors.editorBg,
-    },
+		warning = { fg = c.warningEmphasis, bg = bg },
+		warning_visible = { fg = c.warningEmphasis, bg = bg },
+		warning_selected = {
+			fg = c.warningEmphasis,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
+		warning_diagnostic = { fg = c.warningEmphasis, bg = bg },
+		warning_diagnostic_visible = { fg = c.warningEmphasis, bg = bg },
+		warning_diagnostic_selected = {
+			fg = c.warningEmphasis,
+			bg = c.editorBg,
+		},
 
-    info = { fg = colors.syntaxFunction, bg = bg },
-    info_visible = { fg = colors.syntaxFunction, bg = bg },
-    info_selected = {
-      fg = colors.syntaxFunction,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
-    info_diagnostic = { fg = colors.syntaxFunction, bg = bg },
-    info_diagnostic_visible = { fg = colors.syntaxFunction, bg = bg },
-    info_diagnostic_selected = {
-      fg = colors.syntaxFunction,
-      bg = colors.editorBg,
-    },
+		info = { fg = c.syntaxFunction, bg = bg },
+		info_visible = { fg = c.syntaxFunction, bg = bg },
+		info_selected = {
+			fg = c.syntaxFunction,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
+		info_diagnostic = { fg = c.syntaxFunction, bg = bg },
+		info_diagnostic_visible = { fg = c.syntaxFunction, bg = bg },
+		info_diagnostic_selected = {
+			fg = c.syntaxFunction,
+			bg = c.editorBg,
+		},
 
-    hint = { fg = colors.successText, bg = bg },
-    hint_visible = { fg = colors.successText, bg = bg },
-    hint_selected = {
-      fg = colors.successText,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
-    hint_diagnostic = { fg = colors.successText, bg = bg },
-    hint_diagnostic_visible = { fg = colors.successText, bg = bg },
-    hint_diagnostic_selected = {
-      fg = colors.successText,
-      bg = colors.editorBg,
-    },
+		hint = { fg = c.successText, bg = bg },
+		hint_visible = { fg = c.successText, bg = bg },
+		hint_selected = {
+			fg = c.successText,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
+		hint_diagnostic = { fg = c.successText, bg = bg },
+		hint_diagnostic_visible = { fg = c.successText, bg = bg },
+		hint_diagnostic_selected = {
+			fg = c.successText,
+			bg = c.editorBg,
+		},
 
-    diagnostic = { fg = colors.lineNumberText, bg = bg },
-    diagnostic_visible = { fg = colors.lineNumberText, bg = bg },
-    diagnostic_selected = {
-      fg = colors.lineNumberText,
-      bg = colors.editorBg,
-      italic = config.italics.bufferline or false,
-    },
+		diagnostic = { fg = c.lineNumberText, bg = bg },
+		diagnostic_visible = { fg = c.lineNumberText, bg = bg },
+		diagnostic_selected = {
+			fg = c.lineNumberText,
+			bg = c.editorBg,
+			italic = config.italics.bufferline or false,
+		},
 
-    modified = { fg = colors.warningText, bg = bg },
-    modified_selected = {
-      fg = colors.warningText,
-      bg = colors.editorBg,
-    },
-  }
+		modified = { fg = c.warningText, bg = bg },
+		modified_selected = {
+			fg = c.warningText,
+			bg = c.editorBg,
+		},
+	}
 end
 
 return M
