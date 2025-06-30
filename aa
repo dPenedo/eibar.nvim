@@ -1,0 +1,48 @@
+return {
+  -- Backgrounds (azules oscuros saturados)
+  editorBg = config.transparent and "none" or "#0F121D",  -- Más oscuro y saturado
+  sidebarBg = "#191C26",           -- 15% más saturado que antes
+  popupBg = "#1E212E",             -- Saturado pero no brillante
+  floatingBg = "#171A25",          -- Profundo para contraste
+
+  -- Accent (azules vibrantes)
+  menuOptionBg = "#4A5AA8",        -- Mantenemos (buen contraste)
+  secondaryAccent = "#6D7FD6",     -- Nuevo: para highlights
+
+  -- Whites (neutralizados)
+  mainText = "#E2E0DB",
+  sanBlas = "#EEE8DD",             -- Menos brillo (antes #F5EFE4)
+  emphasisText = "#F0F0F0",        -- Poco saturado
+  commandText = "#D5D5D5",         -- Gris cálido suave
+
+  -- Greys (ahora con saturación coherente)
+  inactiveText = "#5D6275",        -- +5% saturación vs original
+  disabledText = "#73788D",        -- Matiz azul claro
+  lineNumberText = "#656A7F",      -- Unificado con inactiveText
+  selectedText = "#B8C0E0",        -- Azul pastel saturado
+  inactiveSelectionText = "#D0D8F0",-- Versión clara de selectedText
+  windowBorder = "#1C1E2A",        -- Saturado pero oscuro
+  focusedBorder = "#3A3E5A",       -- 20% más saturado
+  emphasizedBorder = "#272B40",    -- Profundo pero no negro
+
+  -- Colores semánticos (rebalanceados)
+  syntaxError = "#E01B40",         -- Rojo intenso (mantenido)
+  errorText = "#FF4D6D",           -- +10% saturación
+  stringText = "#8FBC8F",          -- Verde suavizado
+  successText = "#5AB894",         -- Mantenido (buen balance)
+  damasquinado = "#E8C874",        -- Amarillo más vibrante
+  warningText = "#FFB347",          -- Naranja saturado
+  syntaxFunction = "#8FAEFF",       -- Azul claro saturado
+  syntaxKeyword = "#A594BF",        -- Violeta desaturado
+  keyword = "#D67FA2",             -- Magenta balanceado
+  specialKeyword = "#9E93B4",       -- Mantenido
+  commentText = "#7D8296",          -- Gris-azulado (coherente con terminalGray)
+  terminalGray = "#7D8296",         -- Unificado
+
+  -- Colores especiales (revisados)
+  torreIpurua = "#EDB397",         -- Naranja pastel
+  sanAndres = "#E8D4B0",           -- Amarillo neutro
+  untzaga = "#DD7A5F",             -- Coral saturado
+  cementBH = "#B8C2A8",            -- Verde-grisáceo
+  syntaxOperator = "#A0A0C0",       -- Azul-gris (no puro gris)
+}

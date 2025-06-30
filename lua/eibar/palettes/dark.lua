@@ -6,14 +6,14 @@ return {
 	editorBg = config.transparent and "none" or "#11141D", -- Más azulado (antes #11191D)
 	sidebarBg = "#1D1F26", -- Gris oscuro con matiz azul (antes #1F2122)
 	popupBg = "#22242D", -- Gris medio-oscuro azulado (antes #242628)
-	floatingBg = "#1A1C23", -- Gris con tono frío (antes #27292B)
+	floatingBg = "#21232C", -- Gris con tono frío (antes #27292B)
 
 	-- Accent background (menuOptionBg ya tiene el tono deseado)
 	menuOptionBg = "#4A5AA8", -- Se mantiene igual (azul saturado)
 
 	-- Whites (se mantienen igual, son neutros)
 	mainText = "#E2E0DB",
-	sanBlas = "#F5EFE4",
+	sanBlas = "#F0E7E5",
 	emphasisText = "#fafafa",
 	commandText = "#e0e0e0",
 
@@ -23,31 +23,32 @@ return {
 	lineNumberText = "#686D7E", -- Antes #6C7071 (azul grisáceo)
 	selectedText = "#C8CCE0", -- Antes #D4D8D9 (toque azul claro)
 	inactiveSelectionText = "#D8DCEB", -- Antes #E2E6E7 (azul muy claro)
-	windowBorder = "#1F2129", -- Antes #232527 (más oscuro y azulado)
+	windowBorder = "#43485B", -- Antes #232527 (más oscuro y azulado)
 	focusedBorder = "#373B4A", -- Antes #3C4042 (saturado)
 	emphasizedBorder = "#292C38", -- Antes #2D3133 (azul profundo)
-	commentText = "#7A7E8F", -- Antes #8A8E8F (gris frío con matiz)
+	commentText = "#8F817A", -- Antes #8A8E8F (gris frío con matiz)
 	terminalGray = "#7A7E8F", -- Unificado con comentarios (antes #8A8E8F)
 
 	-- Reds
 	--Reds Errors, warnings
-	syntaxError = "#E01B40",
+	syntaxError = "#D1484E",
 	errorText = "#cd3131",
 
 	--Green	Success, strings
-	stringText = "#91B75F",
-	successText = "#5AB894",
-
+	stringText = "#99BD6B",
+	successText = "#5AB894", -- astelehena
 	--Yellow	Warnings, keywords
 	damasquinado = "#D9B84F",
 	warningEmphasis = "#cd9731",
-	warningText = "#EEB753",
+	warningText = "#D8BC64",
 	--Blue	Functions, links
-	lainoak = "#78A4BA", -- Unificado con linkText
+	-- TODO: unificar azules en 2
+	lainoak = "#B5C1E3", -- Unificado con linkText
 	-- etxea = "#8FAECF",
 	etxea = "#669CB7",
-
+	egoIbaia = "#96C2E2",
 	syntaxFunction = "#A5D0F0",
+
 	syntaxKeyword = "#9E93B4",
 	--Magenta	Special keywords, constants
 	keyword = "#C983A2",

@@ -13,7 +13,7 @@ function M.highlights()
 
 		-- kind support
 		CmpItemKindSnippet = { fg = colors.stringText },
-		CmpItemKindKeyword = { fg = colors.syntaxError },
+		CmpItemKindKeyword = { fg = colors.damasquinado },
 		CmpItemKindText = { fg = colors.warningEmphasis },
 		CmpItemKindMethod = { fg = colors.syntaxKeyword },
 		CmpItemKindConstructor = { fg = colors.syntaxKeyword },
@@ -26,17 +26,17 @@ function M.highlights()
 		CmpItemKindEnum = { fg = colors.successText },
 		CmpItemKindUnit = { fg = colors.successText },
 		CmpItemKindClass = { fg = colors.warningText },
-		CmpItemKindVariable = { fg = colors.syntaxError },
+		CmpItemKindVariable = { fg = colors.damasquinado },
 		CmpItemKindFile = { fg = colors.lainoak },
 		CmpItemKindInterface = { fg = colors.stringText },
-		CmpItemKindColor = { fg = colors.syntaxError },
-		CmpItemKindReference = { fg = colors.syntaxError },
-		CmpItemKindEnumMember = { fg = colors.syntaxError },
+		CmpItemKindColor = { fg = colors.damasquinado },
+		CmpItemKindReference = { fg = colors.damasquinado },
+		CmpItemKindEnumMember = { fg = colors.damasquinado },
 		CmpItemKindStruct = { fg = colors.syntaxFunction },
 		CmpItemKindValue = { fg = colors.warningEmphasis },
 		CmpItemKindEvent = { fg = colors.syntaxFunction },
-		CmpItemKindOperator = { fg = colors.syntaxError },
-		CmpItemKindTypeParameter = { fg = colors.syntaxError },
+		CmpItemKindOperator = { fg = colors.damasquinado },
+		CmpItemKindTypeParameter = { fg = colors.damasquinado },
 		CmpItemKindCopilot = { fg = colors.lainoak },
 
 		-- IndentBlankline
@@ -51,7 +51,7 @@ function M.highlights()
 
 		-- SnacksIndent
 		SnacksIndent = {
-			fg = colors.floatingBg,
+			fg = colors.focusedBorder,
 		},
 		SnacksIndentScope = {
 			fg = colors.lainoak,

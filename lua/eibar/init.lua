@@ -4,6 +4,7 @@ local colors = require("eibar.theme").setup()
 local config = require("eibar.config")
 local utils = require("eibar.utils")
 local theme = {}
+local theme = {}
 
 local function set_terminal_colors()
 	vim.g.terminal_color_0 = colors.editorBg
@@ -38,7 +39,7 @@ local function set_groups()
 		Normal = { fg = colors.mainText, bg = bg },
 		LineNr = { fg = colors.lineNumberText, bg = colors.sidebarBg },
 		ColorColumn = {
-			bg = utils.shade(colors.lainoak, 0.5, colors.editorBg),
+			bg = colors.floatingBg,
 		},
 		Conceal = {},
 		Cursor = { fg = colors.editorBg, bg = colors.mainText },
@@ -65,8 +66,8 @@ local function set_groups()
 			fg = colors.editorBg,
 		},
 		Substitute = { link = "IncSearch" },
-		CursorLineNr = { fg = colors.untzaga },
-		MatchParen = { fg = colors.warningText, bg = colors.emphasizedBorder },
+		CursorLineNr = { fg = colors.torreIpurua },
+		MatchParen = { fg = colors.warningText, bold = true, bg = colors.emphasizedBorder },
 		ModeMsg = { link = "Normal" },
 		MsgArea = { link = "Normal" },
 		-- MsgSeparator = {},
@@ -115,7 +116,7 @@ local function set_groups()
 			italic = config.italics.comments or false,
 		},
 
-		Constant = { fg = colors.syntaxError },
+		Constant = { fg = colors.warningText },
 		String = {
 			fg = colors.stringText,
 			italic = config.italics.strings or false,
@@ -130,7 +131,7 @@ local function set_groups()
 		Method = { fg = colors.syntaxKeyword },
 		Property = { fg = colors.sanBlas },
 		Field = { link = "Property" },
-		Parameter = { fg = colors.mainText },
+		Parameter = { fg = colors.mainText, italic = config.italics.parameter or false },
 		Statement = { fg = colors.keyword },
 		Conditional = { fg = colors.syntaxError },
 		-- Repeat = {},
@@ -170,12 +171,16 @@ local function set_groups()
 		Error = { link = "ErrorMsg" },
 		Todo = { fg = colors.warningText, bold = true },
 
-		-- LspReferenceText = {},
-		-- LspReferenceRead = {},
-		-- LspReferenceWrite = {},
+		LspReferenceText = { bg = diff_text },
+		LspReferenceRead = { link = "LspReferenceText" },
+		LspReferenceWrite = { link = "LspReferenceText" },
 		-- LspCodeLens = {},
 		-- LspCodeLensSeparator = {},
-		-- LspSignatureActiveParameter = {},
+		LspSignatureActiveParameter = { link = "LspReferenceText" },
+
+		FloatBorder = { bg = colors.floatingBg, fg = colors.windowBorder }, -- Bordes
+		LspFloatWinNormal = { link = "NormalFloat" }, -- Contenido del hover
+		LspFloatWinBorder = { link = "FloatBorder" },
 
 		DiagnosticError = { link = "Error" },
 		DiagnosticWarn = { link = "WarningMsg" },
@@ -191,8 +196,7 @@ local function set_groups()
 		DiagnosticUnderlineHint = { undercurl = true, link = "DiagnosticHint" },
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
-		-- DiagnosticFloatingInfo = {},
-		-- DiagnosticFloatingHint = {},
+		DiagnosticFloatingInfo = { fg = colors.torreIpurua, bg = colors.focusedBorder },
 		-- DiagnosticSignError = {},
 		-- DiagnosticSignWarn = {},
 		-- DiagnosticSignInfo = {},
@@ -210,7 +214,7 @@ local function set_groups()
 		--
 		-- For more information see https://github.com/rktjmp/lush.nvim/issues/109
 
-		["@text"] = { fg = colors.mainText },
+		["@text"] = { fg = colors.lainoak },
 		["@texcolorscheme.literal"] = { link = "Property" },
 		-- ["@texcolorscheme.reference"] = {},
 		["@texcolorscheme.strong"] = { link = "Bold" },
@@ -320,6 +324,8 @@ local function set_groups()
 		["@lsp.type.decorator"] = { link = "@label" },
 		["@lsp.typemod.function.declaration"] = { link = "@function" },
 		["@lsp.typemod.function.readonly"] = { link = "@function" },
+		["@lsp.typemod.variable.readonly"] = { link = "@enum" },
+		["@lsp.typemod.variable.readonly.python"] = { link = "@enum" },
 	}
 
 	-- integrations
