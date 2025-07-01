@@ -4,8 +4,11 @@ local M = {
 		["bufferline"] = require("eibar.integrations.bufferline"),
 		["snacks"] = require("eibar.integrations.snacks"),
 		["indent-blankline"] = require("eibar.integrations.indent"),
+		["lsp"] = require("eibar.integrations.lsp"),
 	},
 }
+
+local utils = require("eibar.utils")
 
 function M.highlights()
 	local colors = require("eibar.theme").setup()
@@ -14,9 +17,9 @@ function M.highlights()
 
 	for name, plugin in pairs(M.plugins) do
 		if plugin then
-			if plugin.get then -- Para plugins con estructura estándar
-				all_highlights = vim.tbl_extend("force", all_highlights, plugin.get(colors, config))
-			elseif plugin.highlights then -- Para compatibilidad con plugins legacy
+			if plugin.get then -- Plugins con función estándar get(c, config, utils)
+				all_highlights = vim.tbl_extend("force", all_highlights, plugin.get(colors, config, utils))
+			elseif plugin.highlights then -- Plugins legacy
 				all_highlights = vim.tbl_extend("force", all_highlights, plugin.highlights(config))
 			end
 		else

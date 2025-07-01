@@ -1,343 +1,28 @@
-local colors = require("eibar.theme").setup()
 local config = require("eibar.config")
+local groups_module = require("eibar.base_groups")
+local colors_module = require("eibar.theme")
 local utils = require("eibar.utils")
-local integrations = require("eibar.integrations")
 local terminal = require("eibar.integrations.terminal")
-local theme = {}
+local integrations = require("eibar.integrations")
 
-local function set_groups()
-	local bg = config.transparent and "NONE" or colors.editorBg
-	local diff_add = utils.shade(colors.successText, 0.5, colors.editorBg)
-	local diff_delete = utils.shade(colors.syntaxError, 0.5, colors.editorBg)
-	local diff_change = utils.shade(colors.syntaxFunction, 0.5, colors.editorBg)
-	local diff_text = utils.shade(colors.warningEmphasis, 0.5, colors.editorBg)
+local M = {}
 
-	local groups = {
-		-- base
-		Normal = { fg = colors.mainText, bg = bg },
-		LineNr = { fg = colors.lineNumberText, bg = colors.sidebarBg },
-		ColorColumn = {
-			bg = colors.floatingBg,
-		},
-		Conceal = {},
-		Cursor = { fg = colors.editorBg, bg = colors.mainText },
-		lCursor = { link = "Cursor" },
-		CursorIM = { link = "Cursor" },
-		CursorLine = { bg = colors.popupBg },
-		CursorColumn = { link = "CursorLine" },
-		Directory = { fg = colors.syntaxFunction },
-		DiffAdd = { bg = bg, fg = diff_add },
-		DiffChange = { bg = bg, fg = diff_change },
-		DiffDelete = { bg = bg, fg = diff_delete },
-		DiffText = { bg = bg, fg = diff_text },
-		EndOfBuffer = { fg = colors.syntaxKeyword },
-		TermCursor = { link = "Cursor" },
-		TermCursorNC = { link = "Cursor" },
-		ErrorMsg = { fg = colors.syntaxError },
-		VertSplit = { fg = colors.windowBorder, bg = bg },
-		Winseparator = { link = "VertSplit" },
-		SignColumn = { link = "Normal" },
-		Folded = { fg = colors.mainText, bg = colors.popupBg },
-		FoldColumn = { link = "SignColumn" },
-		IncSearch = {
-			bg = utils.mix(colors.syntaxFunction, colors.editorBg, math.abs(0.30)),
-			fg = colors.editorBg,
-		},
-		Substitute = { link = "IncSearch" },
-		CursorLineNr = { fg = colors.torreIpurua },
-		MatchParen = { fg = colors.warningText, bold = true, bg = colors.emphasizedBorder },
-		ModeMsg = { link = "Normal" },
-		MsgArea = { link = "Normal" },
-		-- MsgSeparator = {},
-		MoreMsg = { fg = colors.syntaxFunction },
-		NonText = { fg = utils.shade(colors.editorBg, 0.30) },
-		NormalFloat = { bg = colors.floatingBg },
-		NormalNC = { link = "Normal" },
-		Pmenu = { link = "NormalFloat" },
-		PmenuSel = { bg = colors.menuOptionBg },
-		PmenuSbar = {
-			bg = utils.shade(colors.syntaxFunction, 0.5, colors.editorBg),
-		},
-		PmenuThumb = { bg = utils.shade(colors.editorBg, 0.20) },
-		Question = { fg = colors.syntaxFunction },
-		QuickFixLine = { fg = colors.syntaxFunction },
-		SpecialKey = { fg = colors.syntaxOperator },
-		StatusLine = { fg = colors.mainText, bg = bg },
-		StatusLineNC = {
-			fg = colors.inactiveText,
-			bg = colors.sidebarBg,
-		},
-		TabLine = {
-			bg = colors.sidebarBg,
-			fg = colors.inactiveText,
-		},
-		TabLineFill = { link = "TabLine" },
-		TabLineSel = {
-			bg = colors.editorBg,
-			fg = colors.emphasisText,
-		},
-		Search = { bg = utils.shade(colors.menuOptionBg, 1, colors.bg) },
-		SpellBad = { undercurl = true, sp = colors.syntaxError },
-		SpellCap = { undercurl = true, sp = colors.syntaxFunction },
-		SpellLocal = { undercurl = true, sp = colors.syntaxKeyword },
-		SpellRare = { undercurl = true, sp = colors.warningText },
-		Title = { fg = colors.syntaxFunction },
-		Visual = {
-			bg = utils.shade(colors.syntaxFunction, 0.40, colors.editorBg),
-		},
-		VisualNOS = { link = "Visual" },
-		WarningMsg = { fg = colors.warningText },
-		Whitespace = { fg = colors.syntaxOperator },
-		WildMenu = { bg = colors.menuOptionBg },
-		Comment = {
-			fg = colors.commentText,
-			italic = config.italics.comments or false,
-		},
-
-		Constant = { fg = colors.warningText },
-		String = {
-			fg = colors.stringText,
-			italic = config.italics.strings or false,
-		},
-		Character = { fg = colors.stringText },
-		Number = { fg = colors.untzaga },
-		Boolean = { fg = colors.untzaga },
-		Float = { link = "Number" },
-
-		Identifier = { fg = colors.mainText },
-		Function = { fg = colors.syntaxFunction },
-		Method = { fg = colors.syntaxKeyword },
-		Property = { fg = colors.sanBlas },
-		Field = { link = "Property" },
-		Parameter = { fg = colors.mainText, italic = config.italics.parameter or false },
-		Statement = { fg = colors.keyword },
-		Conditional = { fg = colors.syntaxError },
-		-- Repeat = {},
-		Label = { fg = colors.syntaxFunction },
-		Operator = { fg = colors.damasquinado },
-		Keyword = { link = "Statement", italic = config.italics.keywords or false },
-		Exception = { fg = colors.syntaxError },
-
-		PreProc = { link = "Keyword" },
-		-- Include = {},
-		Define = { fg = colors.syntaxKeyword },
-		Macro = { link = "Define" },
-		PreCondit = { fg = colors.syntaxError },
-
-		Type = { fg = colors.syntaxKeyword },
-		Struct = { link = "Type" },
-		Class = { link = "Type" },
-
-		-- StorageClass = {},
-		-- Structure = {},
-		-- Typedef = {},
-
-		Attribute = { link = "Character" },
-		Punctuation = { fg = colors.cementBH },
-		Special = { fg = colors.syntaxOperator },
-
-		SpecialChar = { fg = colors.syntaxError },
-		Tag = { fg = colors.lainoak },
-		Delimiter = { fg = colors.cementBH },
-		-- SpecialComment = {},
-		Debug = { fg = colors.specialKeyword },
-
-		Underlined = { underline = true },
-		Bold = { bold = true },
-		Italic = { italic = true },
-		Ignore = { fg = colors.editorBg },
-		Error = { link = "ErrorMsg" },
-		Todo = { fg = colors.warningText, bold = true },
-
-		LspReferenceText = { bg = diff_text },
-		LspReferenceRead = { link = "LspReferenceText" },
-		LspReferenceWrite = { link = "LspReferenceText" },
-		-- LspCodeLens = {},
-		-- LspCodeLensSeparator = {},
-		LspSignatureActiveParameter = { link = "LspReferenceText" },
-
-		FloatBorder = { bg = colors.floatingBg, fg = colors.windowBorder }, -- Bordes
-		LspFloatWinNormal = { link = "NormalFloat" }, -- Contenido del hover
-		LspFloatWinBorder = { link = "FloatBorder" },
-
-		DiagnosticError = { link = "Error" },
-		DiagnosticWarn = { link = "WarningMsg" },
-		DiagnosticInfo = { fg = colors.syntaxFunction },
-		DiagnosticHint = { fg = colors.warningEmphasis },
-		DiagnosticVirtualTextError = { link = "DiagnosticError" },
-		DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
-		DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },
-		DiagnosticVirtualTextHint = { link = "DiagnosticHint" },
-		DiagnosticUnderlineError = { undercurl = true, link = "DiagnosticError" },
-		DiagnosticUnderlineWarn = { undercurl = true, link = "DiagnosticWarn" },
-		DiagnosticUnderlineInfo = { undercurl = true, link = "DiagnosticInfo" },
-		DiagnosticUnderlineHint = { undercurl = true, link = "DiagnosticHint" },
-		-- DiagnosticFloatingError = {},
-		-- DiagnosticFloatingWarn = {},
-		DiagnosticFloatingInfo = { fg = colors.torreIpurua, bg = colors.focusedBorder },
-		-- DiagnosticSignError = {},
-		-- DiagnosticSignWarn = {},
-		-- DiagnosticSignInfo = {},
-		-- DiagnosticSignHint = {},
-
-		-- Tree-Sitter groups are defined with an "@" symbol, which must be
-		-- specially handled to be valid lua code, we do this via the special
-		-- sym function. The following are all valid ways to call the sym function,
-		-- for more details see https://www.lua.org/pil/5.html
-		--
-		-- sym("@text.literal")
-		-- sym('@text.literal')
-		-- sym"@text.literal"
-		-- sym'@text.literal'
-		--
-		-- For more information see https://github.com/rktjmp/lush.nvim/issues/109
-
-		["@text"] = { fg = colors.lainoak },
-		["@texcolorscheme.literal"] = { link = "Property" },
-		-- ["@texcolorscheme.reference"] = {},
-		["@texcolorscheme.strong"] = { link = "Bold" },
-		["@texcolorscheme.italic"] = { link = "Italic" },
-		["@texcolorscheme.title"] = { link = "Keyword" },
-		["@texcolorscheme.uri"] = {
-			fg = colors.syntaxFunction,
-			sp = colors.syntaxFunction,
-			underline = true,
-		},
-		["@texcolorscheme.underline"] = { link = "Underlined" },
-		["@symbol"] = { fg = colors.syntaxOperator },
-		["@texcolorscheme.todo"] = { link = "Todo" },
-		["@comment"] = { link = "Comment" },
-		["@punctuation"] = { link = "Punctuation" },
-		["@punctuation.bracket"] = { fg = colors.cementBH },
-		["@punctuation.delimiter"] = { fg = colors.lainoak },
-		["@punctuation.terminator.statement"] = { link = "Delimiter" },
-		["@punctuation.special"] = { fg = colors.untzaga },
-		["@punctuation.separator.keyvalue"] = { fg = colors.syntaxError },
-
-		["@texcolorscheme.diff.add"] = { fg = colors.successText },
-		["@texcolorscheme.diff.delete"] = { fg = colors.errorText },
-
-		["@constant"] = { link = "Constant" },
-		["@constant.builtin"] = { fg = colors.syntaxFunction },
-		["@constancolorscheme.builtin"] = { link = "Keyword" },
-		-- ["@constancolorscheme.macro"] = {},
-		-- ["@define"] = {},
-		-- ["@macro"] = {},
-		["@string"] = { link = "String" },
-		["@string.escape"] = { fg = utils.shade(colors.stringText, 0.45) },
-		["@string.special"] = { fg = utils.shade(colors.syntaxFunction, 0.45) },
-		-- ["@character"] = {},
-		-- ["@character.special"] = {},
-		["@number"] = { link = "Number" },
-		["@boolean"] = { link = "Boolean" },
-		-- ["@float"] = {},
-		["@function"] = {
-			link = "Function",
-			italic = config.italics.functions or false,
-		},
-		["@function.call"] = { link = "Function" },
-		["@function.builtin"] = { link = "Function" },
-		-- ["@function.macro"] = {},
-		["@parameter"] = { link = "Parameter" },
-		["@method"] = { link = "Function" },
-		["@field"] = { link = "Property" },
-		["@property"] = { link = "Property" },
-		["@constructor"] = { fg = colors.lainoak },
-		-- ["@conditional"] = {},
-		-- ["@repeat"] = {},
-		["@label"] = { link = "Label" },
-		["@operator"] = { link = "Operator" },
-		["@exception"] = { link = "Exception" },
-		["@variable"] = {
-			fg = colors.sanBlas,
-			italic = config.italics.variables or false,
-		},
-		["@variable.builtin"] = { fg = colors.sanBlas },
-		["@variable.member"] = { fg = colors.lainoak },
-		["@variable.parameter"] = {
-			fg = colors.mainText,
-			italic = config.italics.variables or false,
-		},
-		["@type"] = { link = "Type" },
-		["@type.definition"] = { fg = colors.mainText },
-		["@type.builtin"] = { fg = colors.syntaxFunction },
-		["@type.qualifier"] = { fg = colors.syntaxFunction },
-		["@keyword"] = { link = "Keyword" },
-		-- ["@storageclass"] = {},
-		-- ["@structure"] = {},
-		["@namespace"] = { link = "Type" },
-		["@annotation"] = { link = "Label" },
-		-- ["@include"] = {},
-		-- ["@preproc"] = {},
-		["@debug"] = { fg = colors.specialKeyword },
-		["@tag"] = { link = "Tag" },
-		["@tag.builtin"] = { link = "Tag" },
-		["@tag.delimiter"] = { fg = colors.syntaxOperator },
-		["@tag.attribute"] = { fg = colors.syntaxKeyword },
-		["@tag.jsx.element"] = { fg = colors.syntaxFunction },
-		["@attribute"] = { fg = colors.syntaxKeyword },
-		["@error"] = { link = "Error" },
-		["@warning"] = { link = "WarningMsg" },
-		["@info"] = { fg = colors.syntaxFunction },
-
-		-- Specific languages
-		-- overrides
-		["@label.json"] = { fg = colors.property }, -- For json
-		["@label.help"] = { link = "@texcolorscheme.uri" }, -- For help files
-		["@texcolorscheme.uri.html"] = { underline = true }, -- For html
-
-		-- semantic highlighting
-		["@lsp.type.namespace"] = { link = "@namespace" },
-		["@lsp.type.type"] = { link = "@type" },
-		["@lsp.type.class"] = { link = "@type" },
-		["@lsp.type.enum"] = { link = "@type" },
-		["@lsp.type.enumMember"] = { fg = colors.syntaxFunction },
-		["@lsp.type.interface"] = { link = "@type" },
-		["@lsp.type.struct"] = { link = "@type" },
-		["@lsp.type.parameter"] = { link = "@parameter" },
-		["@lsp.type.property"] = { link = "@text" },
-		["@lsp.type.function"] = { link = "@function" },
-		["@lsp.type.method"] = { link = "@method" },
-		["@lsp.type.macro"] = { link = "@label" },
-		["@lsp.type.decorator"] = { link = "@label" },
-		["@lsp.typemod.function.declaration"] = { link = "@function" },
-		["@lsp.typemod.function.readonly"] = { link = "@function" },
-		["@lsp.typemod.variable.readonly"] = { link = "@enum" },
-		["@lsp.typemod.variable.readonly.python"] = { link = "@enum" },
-	}
-
-	-- Merge integrations
-	local ok, plugin_highlights = pcall(integrations.highlights)
-	if ok then
-		groups = vim.tbl_extend("force", groups, plugin_highlights)
-	else
-		vim.notify("Error loading plugin highlights: " .. plugin_highlights, vim.log.levels.ERROR)
-	end
-
-	-- Apply overrides
-	local user_overrides = type(config.overrides) == "function" and config.overrides() or config.overrides or {}
-	groups = vim.tbl_extend("force", groups, user_overrides)
-
-	for group, parameters in pairs(groups) do
-		vim.api.nvim_set_hl(0, group, parameters)
-	end
-end
-
-function theme.setup(values)
+function M.setup(values)
 	values = values or {}
 	local merged_config = vim.tbl_extend("force", config.defaults, values)
 	for k, v in pairs(merged_config) do
 		config[k] = v
 	end
 end
-function theme.colorscheme()
+
+function M.colorscheme()
 	if vim.version().minor < 8 then
 		vim.notify("Neovim 0.8+ is required for eibar colorscheme", vim.log.levels.ERROR, { title = "eibar" })
 		return
 	end
 
 	vim.api.nvim_command("hi clear")
-	if vim.fn.exists("syntax_on") then
+	if vim.fn.exists("syntax_on") == 1 then
 		vim.api.nvim_command("syntax reset")
 	end
 
@@ -345,7 +30,25 @@ function theme.colorscheme()
 	vim.o.termguicolors = true
 	vim.g.colors_name = "eibar"
 
-	set_groups() -- esto ya llama a terminal.set(colors)
+	local colors = colors_module.setup()
+
+	terminal.set(colors)
+
+	local groups = groups_module.get_groups(colors, config, utils)
+
+	local ok, plugin_highlights = pcall(integrations.highlights)
+	if ok then
+		groups = vim.tbl_extend("force", groups, plugin_highlights)
+	else
+		vim.notify("Error loading plugin highlights: " .. plugin_highlights, vim.log.levels.ERROR)
+	end
+
+	local user_overrides = type(config.overrides) == "function" and config.overrides() or config.overrides or {}
+	groups = vim.tbl_extend("force", groups, user_overrides)
+
+	for group, opts in pairs(groups) do
+		vim.api.nvim_set_hl(0, group, opts)
+	end
 end
 
-return theme
+return M
