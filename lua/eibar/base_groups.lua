@@ -89,7 +89,7 @@ function M.get_groups(colors, config, utils)
 			italic = config.italics.comments or false,
 		},
 
-		Constant = { fg = colors.warningText },
+		Constant = { fg = colors.untzaga },
 		String = {
 			fg = colors.stringText,
 			italic = config.italics.strings or false,

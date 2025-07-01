@@ -42,7 +42,7 @@ function M.get(c, config, utils)
 		["@texcolorscheme.diff.delete"] = { fg = c.errorText },
 
 		["@constant"] = { link = "Constant" },
-		["@constant.builtin"] = { fg = c.syntaxFunction },
+		["@constant.builtin"] = { fg = c.torreIpurua },
 		["@constancolorscheme.builtin"] = { link = "Keyword" },
 		-- ["@constancolorscheme.macro"] = {},
 		-- ["@define"] = {},

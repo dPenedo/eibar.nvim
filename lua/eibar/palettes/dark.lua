@@ -47,7 +47,7 @@ return {
 	-- etxea = "#8FAECF",
 	etxea = "#669CB7",
 	egoIbaia = "#96C2E2",
-	syntaxFunction = "#A5C1DA", -- Coliseo
+	syntaxFunction = "#9BAFE8", -- Coliseo
 
 	syntaxKeyword = "#A99BC5",
 	specialKeyword = "#A99BC5",

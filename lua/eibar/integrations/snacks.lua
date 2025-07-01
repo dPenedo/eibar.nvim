@@ -9,6 +9,8 @@ function M.get(c, opts)
 		SnacksIndentScope = {
 			fg = c.lainoak,
 		},
+
+    SnacksPickerMatch    = { fg = c.untzaga},
 	}
 end
 
