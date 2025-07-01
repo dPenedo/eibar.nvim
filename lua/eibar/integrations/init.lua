@@ -5,6 +5,7 @@ local M = {
 		["snacks"] = require("eibar.integrations.snacks"),
 		["indent-blankline"] = require("eibar.integrations.indent"),
 		["lsp"] = require("eibar.integrations.lsp"),
+		["markdown"] = require("eibar.integrations.markdown"),
 	},
 }
 

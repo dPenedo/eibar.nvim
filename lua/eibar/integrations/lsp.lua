@@ -53,6 +53,7 @@ function M.get(c, config, utils)
 		-- ["@character"] = {},
 		-- ["@character.special"] = {},
 		["@number"] = { link = "Number" },
+		["@enum"] = { link = "Number" },
 		["@boolean"] = { link = "Boolean" },
 		-- ["@float"] = {},
 		["@function"] = {
@@ -128,6 +129,13 @@ function M.get(c, config, utils)
 		["@lsp.typemod.function.readonly"] = { link = "@function" },
 		["@lsp.typemod.variable.readonly"] = { link = "@enum" },
 		["@lsp.typemod.variable.readonly.python"] = { link = "@enum" },
+
+    ["@markup.heading.1.markdown"] = {link = "@enum"},
+    ["@markup.heading.2.markdown"] = {link = "@method"},
+    ["@markup.heading.3.markdown"] = {link = "@function"},
+    ["@markup.heading.4.markdown"] = {link = "@info"},
+    ["@markup.heading.5.markdown"] = {link = "@text"},
+    ["@markup.heading.6.markdown"] = {link = "@variable"},
 	}
 end
 

@@ -47,18 +47,18 @@ return {
 	-- etxea = "#8FAECF",
 	etxea = "#669CB7",
 	egoIbaia = "#96C2E2",
-	syntaxFunction = "#A5D0F0",
+	syntaxFunction = "#A5C1DA", -- Coliseo
 
-	syntaxKeyword = "#9E93B4",
+	syntaxKeyword = "#A99BC5",
+	specialKeyword = "#A99BC5",
 	--Magenta	Special keywords, constants
 	keyword = "#C983A2",
-	specialKeyword = "#9E93B4",
 	--Cyan	Comments, docs
 
 	torreIpurua = "#EDB397",
 	sanAndres = "#DECAA6",
 	-- untzaga = "#E5A399",
-	untzaga = "#D57653",
+	untzaga = "#D98363",
 	cementBH = "#BDC0AD",
 	syntaxOperator = "#bbbbbb",
 }
