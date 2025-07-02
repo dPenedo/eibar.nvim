@@ -6,11 +6,11 @@ function M.set(colors)
 	vim.g.terminal_color_2 = colors.successText
 	vim.g.terminal_color_3 = colors.untzaga
 	vim.g.terminal_color_4 = colors.syntaxFunction
-	vim.g.terminal_color_5 = colors.syntaxKeyword
+	vim.g.terminal_color_5 = colors.morea
 	vim.g.terminal_color_6 = colors.lainoak
 	vim.g.terminal_color_7 = colors.mainText
 	vim.g.terminal_color_8 = colors.inactiveText
-	vim.g.terminal_color_9 = colors.errorText
+	vim.g.terminal_color_9 = colors.keyword
 	vim.g.terminal_color_10 = colors.stringText
 	vim.g.terminal_color_11 = colors.warningText
 	vim.g.terminal_color_12 = colors.syntaxOperator

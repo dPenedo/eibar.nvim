@@ -5,7 +5,7 @@ function M.get_groups(colors, config, utils)
 	local diff_add = utils.shade(colors.successText, 0.5, colors.editorBg)
 	local diff_delete = utils.shade(colors.syntaxError, 0.5, colors.editorBg)
 	local diff_change = utils.shade(colors.syntaxFunction, 0.5, colors.editorBg)
-	local diff_text = utils.shade(colors.warningEmphasis, 0.5, colors.editorBg)
+	local diff_text = utils.shade(colors.warningText, 0.5, colors.editorBg)
 
 	local groups = {
 		-- base
@@ -25,7 +25,7 @@ function M.get_groups(colors, config, utils)
 		DiffChange = { bg = bg, fg = diff_change },
 		DiffDelete = { bg = bg, fg = diff_delete },
 		DiffText = { bg = bg, fg = diff_text },
-		EndOfBuffer = { fg = colors.syntaxKeyword },
+		EndOfBuffer = { fg = colors.morea },
 		TermCursor = { link = "Cursor" },
 		TermCursorNC = { link = "Cursor" },
 		ErrorMsg = { fg = colors.syntaxError },
@@ -35,7 +35,7 @@ function M.get_groups(colors, config, utils)
 		Folded = { fg = colors.mainText, bg = colors.popupBg },
 		FoldColumn = { link = "SignColumn" },
 		IncSearch = {
-			bg = utils.mix(colors.syntaxFunction, colors.editorBg, math.abs(0.30)),
+			bg = utils.mix(colors.sanAndres, colors.editorBg, math.abs(0.90)),
 			fg = colors.editorBg,
 		},
 		Substitute = { link = "IncSearch" },
@@ -74,7 +74,7 @@ function M.get_groups(colors, config, utils)
 		Search = { bg = utils.shade(colors.menuOptionBg, 1, colors.bg) },
 		SpellBad = { undercurl = true, sp = colors.syntaxError },
 		SpellCap = { undercurl = true, sp = colors.syntaxFunction },
-		SpellLocal = { undercurl = true, sp = colors.syntaxKeyword },
+		SpellLocal = { undercurl = true, sp = colors.morea },
 		SpellRare = { undercurl = true, sp = colors.warningText },
 		Title = { fg = colors.syntaxFunction },
 		Visual = {
@@ -101,7 +101,7 @@ function M.get_groups(colors, config, utils)
 
 		Identifier = { fg = colors.mainText },
 		Function = { fg = colors.syntaxFunction },
-		Method = { fg = colors.syntaxKeyword },
+		Method = { fg = colors.morea },
 		Property = { fg = colors.sanBlas },
 		Field = { link = "Property" },
 		Parameter = { fg = colors.mainText, italic = config.italics.parameter or false },
@@ -115,11 +115,11 @@ function M.get_groups(colors, config, utils)
 
 		PreProc = { link = "Keyword" },
 		-- Include = {},
-		Define = { fg = colors.syntaxKeyword },
+		Define = { fg = colors.morea },
 		Macro = { link = "Define" },
 		PreCondit = { fg = colors.syntaxError },
 
-		Type = { fg = colors.syntaxKeyword },
+		Type = { fg = colors.morea },
 		Struct = { link = "Type" },
 		Class = { link = "Type" },
 
@@ -135,7 +135,7 @@ function M.get_groups(colors, config, utils)
 		Tag = { fg = colors.lainoak },
 		Delimiter = { fg = colors.cementBH },
 		-- SpecialComment = {},
-		Debug = { fg = colors.specialKeyword },
+		Debug = { fg = colors.morea },
 
 		Underlined = { underline = true },
 		Bold = { bold = true },
@@ -158,7 +158,7 @@ function M.get_groups(colors, config, utils)
 		DiagnosticError = { link = "Error" },
 		DiagnosticWarn = { link = "WarningMsg" },
 		DiagnosticInfo = { fg = colors.syntaxFunction },
-		DiagnosticHint = { fg = colors.warningEmphasis },
+		DiagnosticHint = { fg = colors.warningText },
 		DiagnosticVirtualTextError = { link = "DiagnosticError" },
 		DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
 		DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },

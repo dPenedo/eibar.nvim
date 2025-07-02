@@ -13,31 +13,26 @@ return {
   mainText = "#E2E0DB",
   sanBlas = "#EEE8DD",             -- Menos brillo (antes #F5EFE4)
   emphasisText = "#F0F0F0",        -- Poco saturado
-  commandText = "#D5D5D5",         -- Gris cálido suave
 
   -- Greys (ahora con saturación coherente)
   inactiveText = "#5D6275",        -- +5% saturación vs original
   disabledText = "#73788D",        -- Matiz azul claro
   lineNumberText = "#656A7F",      -- Unificado con inactiveText
   selectedText = "#B8C0E0",        -- Azul pastel saturado
-  inactiveSelectionText = "#D0D8F0",-- Versión clara de selectedText
   windowBorder = "#1C1E2A",        -- Saturado pero oscuro
   focusedBorder = "#3A3E5A",       -- 20% más saturado
   emphasizedBorder = "#272B40",    -- Profundo pero no negro
 
   -- Colores semánticos (rebalanceados)
   syntaxError = "#E01B40",         -- Rojo intenso (mantenido)
-  errorText = "#FF4D6D",           -- +10% saturación
   stringText = "#8FBC8F",          -- Verde suavizado
   successText = "#5AB894",         -- Mantenido (buen balance)
   damasquinado = "#E8C874",        -- Amarillo más vibrante
   warningText = "#FFB347",          -- Naranja saturado
   syntaxFunction = "#8FAEFF",       -- Azul claro saturado
-  syntaxKeyword = "#A594BF",        -- Violeta desaturado
+  morea = "#A594BF",        -- Violeta desaturado
   keyword = "#D67FA2",             -- Magenta balanceado
-  specialKeyword = "#9E93B4",       -- Mantenido
-  commentText = "#7D8296",          -- Gris-azulado (coherente con terminalGray)
-  terminalGray = "#7D8296",         -- Unificado
+  morea = "#9E93B4",       -- Mantenido
 
   -- Colores especiales (revisados)
   torreIpurua = "#EDB397",         -- Naranja pastel

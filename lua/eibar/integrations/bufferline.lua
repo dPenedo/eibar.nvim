@@ -82,17 +82,17 @@ function M.get(c, opts)
 			bg = c.editorBg,
 		},
 
-		warning = { fg = c.warningEmphasis, bg = bg },
-		warning_visible = { fg = c.warningEmphasis, bg = bg },
+		warning = { fg = c.warningText, bg = bg },
+		warning_visible = { fg = c.warningText, bg = bg },
 		warning_selected = {
-			fg = c.warningEmphasis,
+			fg = c.warningText,
 			bg = c.editorBg,
 			italic = config.italics.bufferline or false,
 		},
-		warning_diagnostic = { fg = c.warningEmphasis, bg = bg },
-		warning_diagnostic_visible = { fg = c.warningEmphasis, bg = bg },
+		warning_diagnostic = { fg = c.warningText, bg = bg },
+		warning_diagnostic_visible = { fg = c.warningText, bg = bg },
 		warning_diagnostic_selected = {
-			fg = c.warningEmphasis,
+			fg = c.warningText,
 			bg = c.editorBg,
 		},
 
