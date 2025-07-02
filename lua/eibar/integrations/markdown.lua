@@ -8,17 +8,17 @@ function M.get(c, opts)
 			fg = c.untzaga,
 		},
 		RenderMarkdownH2Bg = {
-			bg = c.popupBg,
+			bg = c.floatingBg,
 			fg = c.torreIpurua,
 		},
 		RenderMarkdownH3Bg = {
-			bg = c.popupBg,
+			bg = c.floatingBg,
 		},
 		RenderMarkdownH4Bg = {
-			bg = c.popupBg,
+			bg = c.floatingBg,
 		},
 		RenderMarkdownH5Bg = {
-			bg = c.popupBg,
+			bg = c.floatingBg,
 		},
 	}
 end
