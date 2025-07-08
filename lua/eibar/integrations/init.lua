@@ -6,6 +6,7 @@ local M = {
 		["indent-blankline"] = require("eibar.integrations.indent"),
 		["lsp"] = require("eibar.integrations.lsp"),
 		["markdown"] = require("eibar.integrations.markdown"),
+		["flash"] = require("eibar.integrations.flash"),
 	},
 }
 
