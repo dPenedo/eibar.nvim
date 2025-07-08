@@ -38,7 +38,7 @@ function M.get(c, config, utils)
 		["@punctuation.special"] = { fg = c.untzaga },
 		["@punctuation.separator.keyvalue"] = { fg = c.syntaxError },
 
-		["@texcolorscheme.diff.add"] = { fg = c.successText },
+		["@texcolorscheme.diff.add"] = { fg = c.astelehena },
 
 		["@constant"] = { link = "Constant" },
 		["@constant.builtin"] = { fg = c.torreIpurua },
@@ -47,7 +47,7 @@ function M.get(c, config, utils)
 		-- ["@define"] = {},
 		-- ["@macro"] = {},
 		["@string"] = { link = "String" },
-		["@string.escape"] = { fg = utils.shade(c.stringText, 0.45) },
+		["@string.escape"] = { fg = utils.shade(c.arrate, 0.45) },
 		["@string.special"] = { fg = utils.shade(c.syntaxFunction, 0.45) },
 		-- ["@character"] = {},
 		-- ["@character.special"] = {},

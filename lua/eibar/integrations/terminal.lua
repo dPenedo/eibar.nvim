@@ -3,7 +3,7 @@ local M = {}
 function M.set(colors)
 	vim.g.terminal_color_0 = colors.editorBg
 	vim.g.terminal_color_1 = colors.syntaxError
-	vim.g.terminal_color_2 = colors.successText
+	vim.g.terminal_color_2 = colors.astelehena
 	vim.g.terminal_color_3 = colors.untzaga
 	vim.g.terminal_color_4 = colors.syntaxFunction
 	vim.g.terminal_color_5 = colors.morea
@@ -11,11 +11,11 @@ function M.set(colors)
 	vim.g.terminal_color_7 = colors.mainText
 	vim.g.terminal_color_8 = colors.lineNumberText
 	vim.g.terminal_color_9 = colors.keyword
-	vim.g.terminal_color_10 = colors.stringText
+	vim.g.terminal_color_10 = colors.arrate
 	vim.g.terminal_color_11 = colors.warningText
 	vim.g.terminal_color_12 = colors.cementBH
 	vim.g.terminal_color_13 = colors.syntaxError
-	vim.g.terminal_color_14 = colors.stringText
+	vim.g.terminal_color_14 = colors.arrate
 	vim.g.terminal_color_15 = colors.commentText
 	vim.g.terminal_color_background = colors.editorBg
 	vim.g.terminal_color_foreground = colors.mainText

@@ -21,7 +21,7 @@ theme.insert = {
 
 theme.terminal = {
 	a = {
-		bg = colors.successText,
+		bg = colors.astelehena,
 		fg = colors.editorBg,
 		gui = "bold",
 	},
@@ -30,7 +30,7 @@ theme.terminal = {
 
 theme.command = {
 	a = {
-		bg = colors.successText,
+		bg = colors.astelehena,
 		fg = colors.editorBg,
 		gui = "bold",
 	},

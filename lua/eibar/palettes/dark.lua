@@ -14,14 +14,14 @@ return {
 	lainoak = "#B5C1E3", -- Unificado con linkText
 	commentText = "#A29690", -- Antes #8A8E8F (gris frío con matiz)
 	syntaxError = "#D1484E",
-	-- stringText = "#99BD6B", -- va bien?
-	stringText = "#95B987", -- Verde fresco pero más suave que #8ACB88
-	successText = "#4AAE84", -- Verde más oscuro para contraste
+	-- arrate = "#99BD6B",
+	arrate = "#95B987",
+	astelehena = "#4AAE84", -- Verde más oscuro para contraste
 
-	damasquinado = "#D9B84F", -- anaranjar?
+	damasquinado = "#D9B84F",
 	warningText = "#C5B277",
 	egoIbaia = "#96C2E2",
-	syntaxFunction = "#9BAFE8", -- Coliseo
+	syntaxFunction = "#9BAFE8",
 	morea = "#A99BC5",
 	keyword = "#C983A2",
 	torreIpurua = "#EDB397",

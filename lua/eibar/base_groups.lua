@@ -2,7 +2,7 @@ local M = {}
 
 function M.get_groups(c, config, utils)
 	local bg = config.transparent and "NONE" or c.editorBg
-	local diff_add = utils.shade(c.successText, 0.5, c.editorBg)
+	local diff_add = utils.shade(c.astelehena, 0.5, c.editorBg)
 	local diff_delete = utils.shade(c.syntaxError, 0.5, c.editorBg)
 	local diff_change = utils.shade(c.syntaxFunction, 0.5, c.editorBg)
 	local diff_text = utils.shade(c.warningText, 0.5, c.editorBg)
@@ -91,10 +91,10 @@ function M.get_groups(c, config, utils)
 
 		Constant = { fg = c.untzaga },
 		String = {
-			fg = c.stringText,
+			fg = c.arrate,
 			italic = config.italics.strings or false,
 		},
-		Character = { fg = c.stringText },
+		Character = { fg = c.arrate },
 		Number = { fg = c.untzaga },
 		Boolean = { fg = c.untzaga },
 		Float = { link = "Number" },

@@ -110,17 +110,17 @@ function M.get(c, opts)
 			bg = c.editorBg,
 		},
 
-		hint = { fg = c.successText, bg = bg },
-		hint_visible = { fg = c.successText, bg = bg },
+		hint = { fg = c.astelehena, bg = bg },
+		hint_visible = { fg = c.astelehena, bg = bg },
 		hint_selected = {
-			fg = c.successText,
+			fg = c.astelehena,
 			bg = c.editorBg,
 			italic = config.italics.bufferline or false,
 		},
-		hint_diagnostic = { fg = c.successText, bg = bg },
-		hint_diagnostic_visible = { fg = c.successText, bg = bg },
+		hint_diagnostic = { fg = c.astelehena, bg = bg },
+		hint_diagnostic_visible = { fg = c.astelehena, bg = bg },
 		hint_diagnostic_selected = {
-			fg = c.successText,
+			fg = c.astelehena,
 			bg = c.editorBg,
 		},
 

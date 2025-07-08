@@ -19,8 +19,8 @@ return {
 
   -- Colores semánticos (rebalanceados)
   syntaxError = "#E01B40",         -- Rojo intenso (mantenido)
-  stringText = "#8FBC8F",          -- Verde suavizado
-  successText = "#5AB894",         -- Mantenido (buen balance)
+  arrate = "#8FBC8F",          -- Verde suavizado
+  syntaxError = "#5AB894",         -- Mantenido (buen balance)
   damasquinado = "#E8C874",        -- Amarillo más vibrante
   warningText = "#FFB347",          -- Naranja saturado
   syntaxFunction = "#8FAEFF",       -- Azul claro saturado
