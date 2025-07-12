@@ -5,14 +5,14 @@ local theme = {}
 local bg = config.transparent and "NONE" or colors.editorBg
 
 theme.normal = {
-	a = { bg = colors.blue, fg = colors.editorBg, gui = "bold" },
+	a = { bg = colors.syntaxFunction, fg = colors.editorBg, gui = "bold" },
 	b = { bg = bg, fg = colors.commentText },
-	c = { bg = bg, fg = colors.editorBg },
+	c = { bg = bg, fg = colors.syntaxFunction },
 }
 
 theme.insert = {
 	a = {
-		bg = colors.syntaxError,
+		bg = colors.arrate,
 		fg = colors.editorBg,
 		gui = "bold",
 	},
@@ -39,7 +39,7 @@ theme.command = {
 
 theme.visual = {
 	a = {
-		bg = colors.morea,
+		bg = colors.keyword,
 		fg = colors.editorBg,
 		gui = "bold",
 	},
