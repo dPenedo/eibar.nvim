@@ -4,13 +4,13 @@ function M.get(c, opts)
   -- stylua: ignore
   return {
 		-- IndentBlankline
-		IndentBlanklineChar = { fg = c.floatingBg },
-		IndentBlanklineSpaceChar = { fg = c.floatingBg },
-		IndentBlanklineSpaceCharBlankline = { fg = c.floatingBg },
+		IndentBlanklineChar = { fg = c.base03 },
+		IndentBlanklineSpaceChar = { fg = c.base03 },
+		IndentBlanklineSpaceCharBlankline = { fg = c.base03 },
 		-- IndentBlanklineContextChar = { fg = theme.ui.special },
 		-- IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
-		IblIndent = { fg = c.floatingBg },
-		IblWhitespace = { fg = c.floatingBg },
+		IblIndent = { fg = c.base03 },
+		IblWhitespace = { fg = c.base03 },
 		-- IblScope = { fg = theme.ui.special },
   }
 end

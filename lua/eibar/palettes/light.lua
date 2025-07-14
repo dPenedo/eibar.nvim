@@ -1,9 +1,9 @@
 local config = require("eibar.config")
 
 return {
-	editorBg = config.transparent and "none" or "#212121",
-	sidebarBg = "#1a1a1a",
-	floatingBg = "#383838",
+	base01 = config.transparent and "none" or "#212121",
+	base02 = "#1a1a1a",
+	base03 = "#383838",
 	menuOptionBg = "#282828",
 
 	mainText = "#c1c1c1",

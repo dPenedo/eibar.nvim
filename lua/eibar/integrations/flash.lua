@@ -8,7 +8,7 @@ function M.get(c, opts)
 			fg = c.commentText,
 		},
 		FlashLabel = {
-			fg = c.editorBg,
+			fg = c.base01,
 			bg = c.untzaga,
 			bold = true,
 		},

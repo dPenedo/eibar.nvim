@@ -1,11 +1,12 @@
 local config = require("eibar.config")
 
 return {
-	-- editorBg = config.transparent and "none" or "#11141D", -- Más azulado (antes #11191D)
-	editorBg = config.transparent and "none" or "#212121", -- Más azulado (antes #11191D)
-	-- sidebarBg = "#1D1F26", -- Gris oscuro con matiz azul (antes #1F2122)
-	sidebarBg = "#282828", -- Gris oscuro con matiz azul (antes #1F2122)
-	floatingBg = "#303030", -- Gris con tono frío (antes #27292B)
+	-- base01 = config.transparent and "none" or "#11141D", -- Más azulado (antes #11191D)
+	base00 = "#161616",
+	base01 = config.transparent and "none" or "#222222", -- Más azulado (antes #11191D)
+	base02 = "#282828", -- Gris oscuro con matiz azul (antes #1F2122)
+	base03 = "#343434", -- Gris con tono frío (antes #27292B)
+	base04 = "#404040", -- Gris con tono frío (antes #27292B)
 	focusedBorder = "#2E323D", -- Antes #3C4042 (saturado)
 	windowBorder = "#373B48", -- Antes #232527 (más oscuro y azulado)
 	menuOptionBg = "#4A5AA8", -- Se mantiene igual (azul saturado)

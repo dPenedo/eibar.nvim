@@ -1,7 +1,7 @@
 local M = {}
 
 function M.set(colors)
-	vim.g.terminal_color_0 = colors.editorBg
+	vim.g.terminal_color_0 = colors.base01
 	vim.g.terminal_color_1 = colors.syntaxError
 	vim.g.terminal_color_2 = colors.astelehena
 	vim.g.terminal_color_3 = colors.untzaga
@@ -17,7 +17,7 @@ function M.set(colors)
 	vim.g.terminal_color_13 = colors.syntaxError
 	vim.g.terminal_color_14 = colors.arrate
 	vim.g.terminal_color_15 = colors.commentText
-	vim.g.terminal_color_background = colors.editorBg
+	vim.g.terminal_color_background = colors.base01
 	vim.g.terminal_color_foreground = colors.mainText
 end
 

@@ -129,12 +129,12 @@ function M.get(c, config, utils)
 		["@lsp.typemod.variable.readonly"] = { link = "@enum" },
 		["@lsp.typemod.variable.readonly.python"] = { link = "@enum" },
 
-    ["@markup.heading.1.markdown"] = {link = "@enum"},
-    ["@markup.heading.2.markdown"] = {link = "@method"},
-    ["@markup.heading.3.markdown"] = {link = "@function"},
-    ["@markup.heading.4.markdown"] = {link = "@info"},
-    ["@markup.heading.5.markdown"] = {link = "@text"},
-    ["@markup.heading.6.markdown"] = {link = "@variable"},
+    ["@markup.heading.1.markdown"] = {link = "@Constant"},
+    ["@markup.heading.2.markdown"] = {link = "@Type"},
+    ["@markup.heading.3.markdown"] = {link = "@Method"},
+    ["@markup.heading.4.markdown"] = {link = "@Function"},
+    ["@markup.heading.5.markdown"] = {link = "@Type"},
+    ["@markup.heading.6.markdown"] = {link = "@Variable"},
 	}
 end
 

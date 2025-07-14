@@ -2,10 +2,10 @@ local colors = require("eibar.theme").setup()
 local config = require("eibar.config")
 local theme = {}
 
-local bg = config.transparent and "NONE" or colors.editorBg
+local bg = config.transparent and "NONE" or colors.base01
 
 theme.normal = {
-	a = { bg = colors.syntaxFunction, fg = colors.editorBg, gui = "bold" },
+	a = { bg = colors.syntaxFunction, fg = colors.base01, gui = "bold" },
 	b = { bg = bg, fg = colors.commentText },
 	c = { bg = bg, fg = colors.syntaxFunction },
 }
@@ -13,7 +13,7 @@ theme.normal = {
 theme.insert = {
 	a = {
 		bg = colors.arrate,
-		fg = colors.editorBg,
+		fg = colors.base01,
 		gui = "bold",
 	},
 	b = { bg = bg, fg = colors.commentText },
@@ -22,7 +22,7 @@ theme.insert = {
 theme.terminal = {
 	a = {
 		bg = colors.astelehena,
-		fg = colors.editorBg,
+		fg = colors.base01,
 		gui = "bold",
 	},
 	b = { bg = bg, fg = colors.commentText },
@@ -31,7 +31,7 @@ theme.terminal = {
 theme.command = {
 	a = {
 		bg = colors.astelehena,
-		fg = colors.editorBg,
+		fg = colors.base01,
 		gui = "bold",
 	},
 	b = { bg = bg, fg = colors.commentText },
@@ -40,7 +40,7 @@ theme.command = {
 theme.visual = {
 	a = {
 		bg = colors.keyword,
-		fg = colors.editorBg,
+		fg = colors.base01,
 		gui = "bold",
 	},
 	b = { bg = bg, fg = colors.commentText },
@@ -49,14 +49,14 @@ theme.visual = {
 theme.replace = {
 	a = {
 		bg = colors.warningText,
-		fg = colors.editorBg,
+		fg = colors.base01,
 		gui = "bold",
 	},
 	b = { bg = bg, fg = colors.commentText },
 }
 
 theme.inactive = {
-	a = { bg = colors.commentText, fg = colors.editorBg },
+	a = { bg = colors.commentText, fg = colors.base01 },
 	b = { bg = bg, fg = colors.warningText, gui = "bold" },
 	c = { bg = bg, fg = colors.warningText },
 }

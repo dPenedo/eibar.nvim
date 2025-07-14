@@ -1,24 +1,25 @@
 local M = {}
 
 function M.get_groups(c, config, utils)
-	local bg = config.transparent and "NONE" or c.editorBg
-	local diff_add = utils.shade(c.astelehena, 0.5, c.editorBg)
-	local diff_delete = utils.shade(c.syntaxError, 0.5, c.editorBg)
-	local diff_change = utils.shade(c.syntaxFunction, 0.5, c.editorBg)
-	local diff_text = utils.shade(c.warningText, 0.5, c.editorBg)
+	local bg = config.transparent and "NONE" or c.base01
+	local diff_add = utils.shade(c.astelehena, 0.5, c.base01)
+	local diff_delete = utils.shade(c.syntaxError, 0.5, c.base01)
+	local diff_change = utils.shade(c.syntaxFunction, 0.5, c.base01)
+	local diff_text = utils.shade(c.warningText, 0.5, c.base01)
 
 	local groups = {
 		-- base
 		Normal = { fg = c.mainText, bg = bg },
-		LineNr = { fg = c.lineNumberText, bg = c.sidebarBg },
+		LineNr = { fg = c.lineNumberText, bg = c.base00 },
 		ColorColumn = {
-			bg = c.floatingBg,
+			bg = c.base03,
 		},
 		Conceal = {},
-		Cursor = { fg = c.editorBg, bg = c.mainText },
+		Cursor = { fg = c.base01, bg = c.mainText },
 		lCursor = { link = "Cursor" },
 		CursorIM = { link = "Cursor" },
-		CursorLine = { bg = c.floatingBg },
+		CursorLine = { bg = c.base03 },
+		CursorLineNr = { fg = c.torreIpurua, bg = c.base02 },
 		CursorColumn = { link = "CursorLine" },
 		Directory = { fg = c.syntaxFunction },
 		DiffAdd = { bg = bg, fg = diff_add },
@@ -32,43 +33,42 @@ function M.get_groups(c, config, utils)
 		VertSplit = { fg = c.windowBorder, bg = bg },
 		Winseparator = { link = "VertSplit" },
 		SignColumn = { link = "Normal" },
-		Folded = { fg = c.mainText, bg = c.floatingBg },
+		Folded = { fg = c.mainText, bg = c.base03 },
 		FoldColumn = { link = "SignColumn" },
 		IncSearch = {
-			bg = utils.mix(c.sanAndres, c.editorBg, math.abs(0.90)),
-			fg = c.editorBg,
+			bg = utils.mix(c.sanAndres, c.base01, math.abs(0.90)),
+			fg = c.base01,
 		},
 		Substitute = { link = "IncSearch" },
-		CursorLineNr = { fg = c.torreIpurua },
-		MatchParen = { fg = c.damasquinado, bold = true, bg = c.floatingBg },
+		MatchParen = { fg = c.damasquinado, bold = true, bg = c.base03 },
 		ModeMsg = { link = "Normal" },
 		MsgArea = { link = "Normal" },
 		-- MsgSeparator = {},
 		MoreMsg = { fg = c.syntaxFunction },
-		NonText = { fg = utils.shade(c.editorBg, 0.30) },
-		NormalFloat = { bg = c.floatingBg },
+		NonText = { fg = utils.shade(c.base01, 0.30) },
+		NormalFloat = { bg = c.base04 },
 		NormalNC = { link = "Normal" },
 		Pmenu = { link = "NormalFloat" },
 		PmenuSel = { bg = c.menuOptionBg },
 		PmenuSbar = {
-			bg = utils.shade(c.syntaxFunction, 0.5, c.editorBg),
+			bg = utils.shade(c.syntaxFunction, 0.5, c.base01),
 		},
-		PmenuThumb = { bg = utils.shade(c.editorBg, 0.20) },
+		PmenuThumb = { bg = utils.shade(c.base01, 0.20) },
 		Question = { fg = c.syntaxFunction },
 		QuickFixLine = { fg = c.syntaxFunction },
 		SpecialKey = { fg = c.keyword },
 		StatusLine = { fg = c.mainText, bg = bg },
 		StatusLineNC = {
 			fg = c.lineNumberText,
-			bg = c.sidebarBg,
+			bg = c.base02,
 		},
 		TabLine = {
-			bg = c.sidebarBg,
+			bg = c.base02,
 			fg = c.lineNumberText,
 		},
 		TabLineFill = { link = "TabLine" },
 		TabLineSel = {
-			bg = c.editorBg,
+			bg = c.base01,
 			fg = c.sanBlas,
 		},
 		Search = { bg = utils.shade(c.menuOptionBg, 1, c.bg) },
@@ -78,10 +78,10 @@ function M.get_groups(c, config, utils)
 		SpellRare = { undercurl = true, sp = c.warningText },
 		Title = { fg = c.syntaxFunction },
 		Visual = {
-			bg = utils.shade(c.syntaxFunction, 0.40, c.editorBg),
+			bg = utils.shade(c.syntaxFunction, 0.40, c.base01),
 		},
 		VisualNOS = { link = "Visual" },
-		WarningMsg = { fg = c.warningText, bg = c.floatingBg },
+		WarningMsg = { fg = c.warningText, bg = c.base03 },
 		Whitespace = { fg = c.cementBH },
 		WildMenu = { bg = c.menuOptionBg },
 		Comment = {
@@ -140,7 +140,7 @@ function M.get_groups(c, config, utils)
 		Underlined = { underline = true },
 		Bold = { bold = true },
 		Italic = { italic = true },
-		Ignore = { fg = c.editorBg },
+		Ignore = { fg = c.base01 },
 		Error = { link = "ErrorMsg" },
 		Todo = { fg = c.warningText, bold = true },
 
@@ -151,14 +151,14 @@ function M.get_groups(c, config, utils)
 		-- LspCodeLensSeparator = {},
 		LspSignatureActiveParameter = { link = "LspReferenceText" },
 
-		FloatBorder = { bg = c.floatingBg, fg = c.windowBorder }, -- Bordes
+		FloatBorder = { bg = c.base03, fg = c.windowBorder }, -- Bordes
 		LspFloatWinNormal = { link = "NormalFloat" }, -- Contenido del hover
 		LspFloatWinBorder = { link = "FloatBorder" },
 
 		DiagnosticError = { link = "Error" },
 		DiagnosticWarn = { link = "WarningMsg" },
 		DiagnosticInfo = { fg = c.syntaxFunction },
-		DiagnosticHint = { fg = c.cementBH, bg = c.sidebarBg },
+		DiagnosticHint = { fg = c.cementBH, bg = c.base02 },
 		DiagnosticVirtualTextError = { link = "DiagnosticError" },
 		DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
 		DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },
