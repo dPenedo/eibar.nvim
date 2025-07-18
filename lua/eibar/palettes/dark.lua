@@ -14,7 +14,7 @@ return {
 	sanBlas = "#F0E7E5",
 	-- sanBlas = "#E6DDD1",
 	lineNumberText = "#686D7E",
-	lainoak = "#B5C1E3", -- Unificado con linkText
+	lainoak = "#B5C1E3",
 	commentText = "#9D9390", -- Antes #8A8E8F (gris frío con matiz)
 	syntaxError = "#D1484E",
 	-- arrate = "#99BD6B",

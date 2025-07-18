@@ -10,7 +10,7 @@ function M.get_groups(c, config, utils)
 	local groups = {
 		-- base
 		Normal = { fg = c.mainText, bg = bg },
-		LineNr = { fg = c.lineNumberText, bg = c.base00 },
+		LineNr = { fg = c.lineNumberText },
 		ColorColumn = {
 			bg = c.base03,
 		},
