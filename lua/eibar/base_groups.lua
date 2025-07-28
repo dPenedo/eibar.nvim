@@ -140,7 +140,7 @@ function M.get_groups(c, config, utils)
 		Underlined = { underline = true },
 		Bold = { bold = true },
 		Italic = { italic = true },
-		Ignore = { fg = c.base01 },
+		Ignore = { fg = c.base04 },
 		Error = { link = "ErrorMsg" },
 		Todo = { fg = c.warningText, bold = true },
 
@@ -150,6 +150,8 @@ function M.get_groups(c, config, utils)
 		-- LspCodeLens = {},
 		-- LspCodeLensSeparator = {},
 		LspSignatureActiveParameter = { link = "LspReferenceText" },
+
+		LspInlayHint = { fg = c.base05, italic = config.italics.parameter or false },
 
 		FloatBorder = { bg = c.base03, fg = c.windowBorder }, -- Bordes
 		LspFloatWinNormal = { link = "NormalFloat" }, -- Contenido del hover

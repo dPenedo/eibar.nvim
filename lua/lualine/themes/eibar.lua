@@ -2,12 +2,13 @@ local colors = require("eibar.theme").setup()
 local config = require("eibar.config")
 local theme = {}
 
-local bg = config.transparent and "NONE" or colors.base01
+local bg = config.transparent and "NONE" or colors.base02
 
 theme.normal = {
 	a = { bg = colors.syntaxFunction, fg = colors.base01, gui = "bold" },
-	b = { bg = bg, fg = colors.commentText },
-	c = { bg = bg, fg = colors.syntaxFunction },
+	b = { bg = colors.windowBorder, fg = colors.commentText },
+	c = { bg = bg, fg = colors.commentText },
+	x = { bg = colors.focusedBorder, fg = colors.syntaxFunction },
 }
 
 theme.insert = {

@@ -129,6 +129,12 @@ function M.get(c, config, utils)
 		["@lsp.typemod.variable.readonly"] = { link = "@enum" },
 		["@lsp.typemod.variable.readonly.python"] = { link = "@enum" },
 
+
+
+    ["@org.keyword.todo"]= {link = '@error'},
+    ["@org.keyword.done"]= {fg = c.astelehena},
+    ["@markup.list.checked"] = {fg = c.astelehena},
+
     ["@markup.heading.1.markdown"] = {link = "@Constant"},
     ["@markup.heading.2.markdown"] = {link = "@Type"},
     ["@markup.heading.3.markdown"] = {link = "@Method"},
