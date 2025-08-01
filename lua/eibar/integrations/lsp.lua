@@ -79,11 +79,11 @@ function M.get(c, config, utils)
 		["@variable.builtin"] = { fg = c.sanBlas },
 		["@variable.member"] = { fg = c.lainoak },
 		["@variable.parameter"] = {
-			fg = c.mainText,
+			fg = c.sanBlas,
 			italic = config.italics.variables or false,
 		},
 		["@type"] = { link = "Type" },
-		["@type.definition"] = { fg = c.mainText },
+		["@type.definition"] = { fg = c.sanBlas },
 		["@type.builtin"] = { fg = c.syntaxFunction },
 		["@type.qualifier"] = { fg = c.syntaxFunction },
 		["@keyword"] = { link = "Keyword" },
@@ -133,14 +133,22 @@ function M.get(c, config, utils)
 
     ["@org.keyword.todo"]= {link = '@error'},
     ["@org.keyword.done"]= {fg = c.astelehena},
+    
     ["@markup.list.checked"] = {fg = c.astelehena},
-
+    ["@markup.strong"] = {fg = c.mainText, bold = true},
+    ["@markup.link"] = {fg = c.lainoak, bold = true},
+  -- ["@lsp.type.enumMember.markdown"] = {fg = c.commentText},
+    ["@lsp.type.decorator.markdown"] = {fg = c.commentText},
+  ["@markup.link.label.markdown_inline"] = {link = "@markup.link"},
     ["@markup.heading.1.markdown"] = {link = "@Constant"},
     ["@markup.heading.2.markdown"] = {link = "@Type"},
     ["@markup.heading.3.markdown"] = {link = "@Method"},
     ["@markup.heading.4.markdown"] = {link = "@Function"},
     ["@markup.heading.5.markdown"] = {link = "@Type"},
     ["@markup.heading.6.markdown"] = {link = "@Variable"},
+  ["@org.headline.level1.org"] = {link = "@Constant"},
+  ["@org.headline.level2.org"] = {link = "@Type"},
+  ["@org.headline.level3.org"] = {link = "@Method"},
 	}
 end
 

@@ -11,7 +11,7 @@ return {
 	focusedBorder = "#2E323D", -- Antes #3C4042 (saturado)
 	windowBorder = "#373B48", -- Antes #232527 (más oscuro y azulado)
 	menuOptionBg = "#4A5AA8", -- Beiztegi
-	mainText = "#E2E0DB", -- Intercambiar?
+	mainText = "#ECEAE4", -- Intercambiar?
 	sanBlas = "#F0E7D5",
 	lineNumberText = "#686D7E",
 	lainoak = "#B5C1E3",

@@ -9,13 +9,13 @@ function M.get_groups(c, config, utils)
 
 	local groups = {
 		-- base
-		Normal = { fg = c.mainText, bg = bg },
+		Normal = { fg = c.sanBlas, bg = bg },
 		LineNr = { fg = c.lineNumberText },
 		ColorColumn = {
 			bg = c.base03,
 		},
 		Conceal = {},
-		Cursor = { fg = c.base01, bg = c.mainText },
+		Cursor = { fg = c.base01, bg = c.sanBlas },
 		lCursor = { link = "Cursor" },
 		CursorIM = { link = "Cursor" },
 		CursorLine = { bg = c.base03 },
@@ -57,7 +57,7 @@ function M.get_groups(c, config, utils)
 		Question = { fg = c.syntaxFunction },
 		QuickFixLine = { fg = c.syntaxFunction },
 		SpecialKey = { fg = c.keyword },
-		StatusLine = { fg = c.mainText, bg = bg },
+		StatusLine = { fg = c.sanBlas, bg = bg },
 		StatusLineNC = {
 			fg = c.lineNumberText,
 			bg = c.base02,
@@ -99,12 +99,12 @@ function M.get_groups(c, config, utils)
 		Boolean = { fg = c.untzaga },
 		Float = { link = "Number" },
 
-		Identifier = { fg = c.mainText },
+		Identifier = { fg = c.sanBlas },
 		Function = { fg = c.syntaxFunction },
 		Method = { fg = c.morea },
 		Property = { fg = c.sanBlas },
 		Field = { link = "Property" },
-		Parameter = { fg = c.mainText, italic = config.italics.parameter or false },
+		Parameter = { fg = c.sanBlas, italic = config.italics.parameter or false },
 		Statement = { fg = c.keyword },
 		Conditional = { fg = c.keyword },
 		-- Repeat = {},

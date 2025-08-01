@@ -9,12 +9,12 @@ function M.get(c, opts)
 		SnacksIndentScope = {
 			fg = c.lainoak,
 		},
-    SnacksDashboardIcon       = { fg = c.arrate },
+    SnacksDashboardIcon       = { fg = c.syntaxFunction },
     SnacksDashboardDesc       = { fg = c.untzaga },
     SnacksDashboardFooter     = { fg = c.sanAndres },
     SnacksDashboardHeader     = { fg = c.arrate },
-    SnacksDashboardKey        = { fg = c.keyword },
-    SnacksDashboardSpecial    = { fg = c.keyword },
+    SnacksDashboardKey        = { fg = c.syntaxFunction },
+    SnacksDashboardSpecial    = { fg = c.sanBlas },
     SnacksDashboardDir        = { fg = c.keyword },
 
 
