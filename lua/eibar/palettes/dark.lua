@@ -9,11 +9,11 @@ return {
 	base04 = "#404040", -- Gris con tono frío (antes #27292B)
 	base05 = "#555555", -- Gris con tono frío (antes #27292B)
 	focusedBorder = "#2E323D", -- Antes #3C4042 (saturado)
-	windowBorder = "#373B48", -- Antes #232527 (más oscuro y azulado)
+	windowBorder = "#464E77", -- Antes #232527 (más oscuro y azulado)
 	menuOptionBg = "#4A5AA8", -- Beiztegi
 	mainText = "#ECEAE4", -- Intercambiar?
 	sanBlas = "#F0E7D5",
-	lineNumberText = "#686D7E",
+	lineNumberText = "#9599A7",
 	lainoak = "#B5C1E3",
 	commentText = "#AEA69D", -- Antes #8A8E8F (gris frío con matiz)
 	syntaxError = "#D1484E",
@@ -25,10 +25,11 @@ return {
 	warningText = "#E3CF91",
 	egoIbaia = "#96C2E2",
 	syntaxFunction = "#9BAFE8",
-	morea = "#A99BC5",
+	-- morea = "#A99BC5",
+	morea = "#B8A7DD",
 	keyword = "#C983A2",
 	torreIpurua = "#EDB397",
-	sanAndres = "#DECAA6",
+	sanAndres = "#EFD4A4",
 
 	-- Accents
 	untzaga = "#D98363",

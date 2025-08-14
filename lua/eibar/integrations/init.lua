@@ -4,9 +4,10 @@ local M = {
 		["bufferline"] = require("eibar.integrations.bufferline"),
 		["snacks"] = require("eibar.integrations.snacks"),
 		["indent-blankline"] = require("eibar.integrations.indent"),
-		["lsp"] = require("eibar.integrations.lsp"),
+		["treesitter"] = require("eibar.integrations.treesitter"),
 		["markdown"] = require("eibar.integrations.markdown"),
 		["flash"] = require("eibar.integrations.flash"),
+		["mini-files"] = require("eibar.integrations.mini-files"),
 	},
 }
 

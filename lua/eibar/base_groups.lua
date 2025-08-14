@@ -102,7 +102,7 @@ function M.get_groups(c, config, utils)
 		Identifier = { fg = c.sanBlas },
 		Function = { fg = c.syntaxFunction },
 		Method = { fg = c.morea },
-		Property = { fg = c.sanBlas },
+		Property = { fg = c.sanAndres },
 		Field = { link = "Property" },
 		Parameter = { fg = c.sanBlas, italic = config.italics.parameter or false },
 		Statement = { fg = c.keyword },
@@ -133,7 +133,7 @@ function M.get_groups(c, config, utils)
 
 		SpecialChar = { fg = c.cementBH },
 		Tag = { fg = c.lainoak },
-		Delimiter = { fg = c.cementBH },
+		Delimiter = { fg = c.torreIpurua },
 		-- SpecialComment = {},
 		Debug = { fg = c.morea },
 
@@ -161,6 +161,8 @@ function M.get_groups(c, config, utils)
 		DiagnosticWarn = { link = "WarningMsg" },
 		DiagnosticInfo = { fg = c.syntaxFunction },
 		DiagnosticHint = { fg = c.cementBH, bg = c.base02 },
+		DiagnosticOk = { fg = c.astelehena },
+
 		DiagnosticVirtualTextError = { link = "DiagnosticError" },
 		DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
 		DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },
@@ -172,6 +174,10 @@ function M.get_groups(c, config, utils)
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
 		DiagnosticFloatingInfo = { fg = c.torreIpurua, bg = c.focusedBorder },
+		DiagnosticFloatingError = { link = "DiagnosticError" },
+		DiagnosticFloatingWarn = { link = "DiagnosticWarn" },
+		-- DiagnosticFloatingInfo = { link = "DiagnosticInfo" },
+		DiagnosticFloatingHint = { link = "DiagnosticHint" },
 		-- DiagnosticSignError = {},
 		-- DiagnosticSignWarn = {},
 		-- DiagnosticSignInfo = {},

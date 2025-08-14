@@ -1,65 +1,65 @@
-local colors = require("eibar.theme").setup()
+local c = require("eibar.theme").setup()
 local config = require("eibar.config")
 local theme = {}
 
-local bg = config.transparent and "NONE" or colors.base02
+local bg = config.transparent and "NONE" or c.base02
 
 theme.normal = {
-	a = { bg = colors.syntaxFunction, fg = colors.base01, gui = "bold" },
-	b = { bg = colors.windowBorder, fg = colors.commentText },
-	c = { bg = bg, fg = colors.commentText },
-	x = { bg = colors.focusedBorder, fg = colors.syntaxFunction },
+	a = { bg = c.syntaxFunction, fg = c.base01, gui = "bold" },
+	b = { bg = c.windowBorder, fg = c.lainoak },
+	c = { bg = bg, fg = c.commentText },
+	x = { bg = c.focusedBorder, fg = c.syntaxFunction },
 }
 
 theme.insert = {
 	a = {
-		bg = colors.arrate,
-		fg = colors.base01,
+		bg = c.arrate,
+		fg = c.base01,
 		gui = "bold",
 	},
-	b = { bg = bg, fg = colors.commentText },
+	b = { bg = c.windowBorder, fg = c.morea },
 }
 
 theme.terminal = {
 	a = {
-		bg = colors.astelehena,
-		fg = colors.base01,
+		bg = c.astelehena,
+		fg = c.base01,
 		gui = "bold",
 	},
-	b = { bg = bg, fg = colors.commentText },
+	b = { bg = bg, fg = c.commentText },
 }
 
 theme.command = {
 	a = {
-		bg = colors.astelehena,
-		fg = colors.base01,
+		bg = c.astelehena,
+		fg = c.base01,
 		gui = "bold",
 	},
-	b = { bg = bg, fg = colors.commentText },
+	b = { bg = bg, fg = c.commentText },
 }
 
 theme.visual = {
 	a = {
-		bg = colors.keyword,
-		fg = colors.base01,
+		bg = c.keyword,
+		fg = c.base01,
 		gui = "bold",
 	},
-	b = { bg = bg, fg = colors.commentText },
+	b = { bg = bg, fg = c.commentText },
 }
 
 theme.replace = {
 	a = {
-		bg = colors.warningText,
-		fg = colors.base01,
+		bg = c.warningText,
+		fg = c.base01,
 		gui = "bold",
 	},
-	b = { bg = bg, fg = colors.commentText },
+	b = { bg = bg, fg = c.commentText },
 }
 
 theme.inactive = {
-	a = { bg = colors.commentText, fg = colors.base01 },
-	b = { bg = bg, fg = colors.warningText, gui = "bold" },
-	c = { bg = bg, fg = colors.warningText },
+	a = { bg = c.commentText, fg = c.base01 },
+	b = { bg = bg, fg = c.warningText, gui = "bold" },
+	c = { bg = bg, fg = c.warningText },
 }
 
 return theme
