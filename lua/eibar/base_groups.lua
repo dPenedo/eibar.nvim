@@ -10,7 +10,6 @@ function M.get_groups(c, config, utils)
 	local groups = {
 		-- base
 		Normal = { fg = c.sanBlas, bg = bg },
-		LineNr = { fg = c.lineNumberText },
 		ColorColumn = {
 			bg = c.base03,
 		},
@@ -19,6 +18,7 @@ function M.get_groups(c, config, utils)
 		lCursor = { link = "Cursor" },
 		CursorIM = { link = "Cursor" },
 		CursorLine = { bg = c.base03 },
+		LineNr = { fg = c.lineNumberText, bg = c.base02 },
 		CursorLineNr = { fg = c.torreIpurua, bg = c.base02 },
 		CursorColumn = { link = "CursorLine" },
 		Directory = { fg = c.syntaxFunction },
@@ -57,18 +57,18 @@ function M.get_groups(c, config, utils)
 		Question = { fg = c.syntaxFunction },
 		QuickFixLine = { fg = c.syntaxFunction },
 		SpecialKey = { fg = c.keyword },
-		StatusLine = { fg = c.sanBlas, bg = bg },
+		StatusLine = { bg = c.base04, fg = c.lainoak },
 		StatusLineNC = {
-			fg = c.lineNumberText,
+			fg = c.sanBlas,
 			bg = c.base02,
 		},
 		TabLine = {
-			bg = c.base02,
+			bg = c.base03,
 			fg = c.lineNumberText,
 		},
-		TabLineFill = { link = "TabLine" },
+		TabLineFill = { fg = c.lainoak },
 		TabLineSel = {
-			bg = c.base01,
+			bg = c.focusedBorder,
 			fg = c.sanBlas,
 		},
 		Search = { bg = utils.shade(c.menuOptionBg, 1, c.bg) },
@@ -100,7 +100,7 @@ function M.get_groups(c, config, utils)
 		Float = { link = "Number" },
 
 		Identifier = { fg = c.sanBlas },
-		Function = { fg = c.syntaxFunction },
+		Function = { fg = c.syntaxFunction, bold = true },
 		Method = { fg = c.morea },
 		Property = { fg = c.sanAndres },
 		Field = { link = "Property" },
@@ -133,7 +133,7 @@ function M.get_groups(c, config, utils)
 
 		SpecialChar = { fg = c.cementBH },
 		Tag = { fg = c.lainoak },
-		Delimiter = { fg = c.torreIpurua },
+		Delimiter = { fg = c.cementBH },
 		-- SpecialComment = {},
 		Debug = { fg = c.morea },
 
@@ -157,20 +157,20 @@ function M.get_groups(c, config, utils)
 		LspFloatWinNormal = { link = "NormalFloat" }, -- Contenido del hover
 		LspFloatWinBorder = { link = "FloatBorder" },
 
-		DiagnosticError = { link = "Error" },
-		DiagnosticWarn = { link = "WarningMsg" },
-		DiagnosticInfo = { fg = c.syntaxFunction },
-		DiagnosticHint = { fg = c.cementBH, bg = c.base02 },
-		DiagnosticOk = { fg = c.astelehena },
+		DiagnosticError = { link = "Error", bg = c.base03 },
+		DiagnosticWarn = { link = "WarningMsg", bg = c.base03 },
+		DiagnosticInfo = { fg = c.syntaxFunction, bg = c.base03 },
+		DiagnosticHint = { fg = c.cementBH, bg = c.base03 },
+		DiagnosticOk = { fg = c.astelehena, bg = c.base03 },
 
 		DiagnosticVirtualTextError = { link = "DiagnosticError" },
 		DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
 		DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },
 		DiagnosticVirtualTextHint = { link = "DiagnosticHint" },
-		DiagnosticUnderlineError = { undercurl = true, underline = true },
-		DiagnosticUnderlineWarn = { undercurl = true, underline = true },
-		DiagnosticUnderlineInfo = { undercurl = true, underline = true },
-		DiagnosticUnderlineHint = { undercurl = true, underline = true },
+		DiagnosticUnderlineError = { sp = c.syntaxError, undercurl = true, underline = true },
+		DiagnosticUnderlineWarn = { undercurl = true, underline = true, sp = c.warningText },
+		DiagnosticUnderlineInfo = { undercurl = true, underline = true, sp = c.egoIbaia },
+		DiagnosticUnderlineHint = { undercurl = true, underline = true, sp = c.lainoak },
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
 		DiagnosticFloatingInfo = { fg = c.torreIpurua, bg = c.focusedBorder },

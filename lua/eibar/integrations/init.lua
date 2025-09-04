@@ -1,11 +1,12 @@
 local M = {
 	plugins = {
 		["nvim-cmp"] = require("eibar.integrations.cmp"),
-		["bufferline"] = require("eibar.integrations.bufferline"),
+		-- ["bufferline"] = require("eibar.integrations.bufferline"),
 		["snacks"] = require("eibar.integrations.snacks"),
 		["indent-blankline"] = require("eibar.integrations.indent"),
 		["treesitter"] = require("eibar.integrations.treesitter"),
 		["markdown"] = require("eibar.integrations.markdown"),
+		["barbar"] = require("eibar.integrations.barbar"),
 		["flash"] = require("eibar.integrations.flash"),
 		["mini-files"] = require("eibar.integrations.mini-files"),
 	},

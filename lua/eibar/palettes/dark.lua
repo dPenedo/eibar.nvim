@@ -11,29 +11,27 @@ return {
 	focusedBorder = "#2E323D", -- Antes #3C4042 (saturado)
 	windowBorder = "#464E77", -- Antes #232527 (más oscuro y azulado)
 	menuOptionBg = "#4A5AA8", -- Beiztegi
-	mainText = "#ECEAE4", -- Intercambiar?
-	sanBlas = "#F0E7D5",
-	lineNumberText = "#9599A7",
+	mainText = "#ECEAE4", -- Brighter than sanBlas?
+	sanBlas = "#F0E7D5", -- Main fg
+	-- lineNumberText = "#9599A7",
+	lineNumberText = "#6A6F80",
 	lainoak = "#B5C1E3",
-	commentText = "#AEA69D", -- Antes #8A8E8F (gris frío con matiz)
+	commentText = "#83796C", -- muted brown - gray
 	syntaxError = "#D1484E",
-	-- arrate = "#99BD6B",
-	arrate = "#95B987",
-	astelehena = "#4AAE84", -- Verde más oscuro para contraste
-	-- damasquinado = "#D9B84F",
+	arrate = "#95B987", -- Strings
+	astelehena = "#4AAE84", -- Not for code, for accept, correct and so on
 	damasquinado = "#E9C86B",
 	warningText = "#E3CF91",
 	egoIbaia = "#96C2E2",
 	syntaxFunction = "#9BAFE8",
 	-- morea = "#A99BC5",
 	morea = "#B8A7DD",
-	keyword = "#C983A2",
+	-- keyword = "#C983A2",
+	keyword = "#D788AB",
 	torreIpurua = "#EDB397",
-	sanAndres = "#EFD4A4",
+	sanAndres = "#DFBC90",
 
 	-- Accents
 	untzaga = "#D98363",
-
-	-- Buscar
-	cementBH = "#C5BEAF", -- Verde más terroso/equilibrado
+	cementBH = "#85A7AD", --
 }

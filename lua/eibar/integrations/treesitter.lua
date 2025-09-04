@@ -32,7 +32,7 @@ function M.get(c, config, utils)
 		["@texcolorscheme.todo"] = { link = "Todo" },
 		["@comment"] = { link = "Comment" },
 		["@punctuation"] = { link = "Punctuation" },
-		["@punctuation.bracket"] = { fg = c.torreIpurua },
+		["@punctuation.bracket"] = { fg = c.cementBH },
 		["@punctuation.delimiter"] = { link = "Delimiter" },
 		["@punctuation.terminator.statement"] = { link = "Delimiter" },
 		["@punctuation.special"] = { fg = c.untzaga },
@@ -66,7 +66,7 @@ function M.get(c, config, utils)
 		["@method"] = { link = "Function" },
 		["@field"] = { link = "Property" },
 		["@property"] = { link = "Property" },
-		["@constructor"] = { fg = c.lainoak },
+		["@constructor"] = { fg = c.cementBH },
 		-- ["@conditional"] = {},
 		-- ["@repeat"] = {},
 		["@label"] = { link = "Label" },
@@ -79,7 +79,7 @@ function M.get(c, config, utils)
 		["@variable.builtin"] = { fg = c.sanBlas },
 		["@variable.member"] = { fg = c.lainoak },
 		["@variable.parameter"] = {
-			fg = c.sanBlas,
+			fg = c.lainoak,
 			italic = config.italics.variables or false,
 		},
 		["@type"] = { link = "Type" },
@@ -136,10 +136,9 @@ function M.get(c, config, utils)
     
     ["@markup.list.checked"] = {fg = c.astelehena},
     ["@markup.strong"] = {fg = c.mainText, bold = true},
-    ["@markup.link"] = {fg = c.lainoak, bold = true},
-  -- ["@lsp.type.enumMember.markdown"] = {fg = c.commentText},
-    -- ["@lsp.type.decorator.markdown"] = {fg = c.commentText},
-  ["@markup.link.label.markdown_inline"] = {link = "@markup.link"},
+    ["@markup.link.label.markdown_inline"] = { fg = c.lainoak,bold = true, underline = true }, -- el [texto]
+
+  ["@lsp.type.enumMember.markdown"] = {fg = c.commentText},
     ["@markup.heading.1.markdown"] = {link = "@Constant"},
     ["@markup.heading.2.markdown"] = {link = "Keyword"},
     ["@markup.heading.3.markdown"] = {link = "@Method"},
