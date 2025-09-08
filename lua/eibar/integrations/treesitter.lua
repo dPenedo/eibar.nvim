@@ -133,18 +133,18 @@ function M.get(c, config, utils)
 
     ["@org.keyword.todo"]= {link = '@error'},
     ["@org.keyword.done"]= {fg = c.astelehena},
-    
     ["@markup.list.checked"] = {fg = c.astelehena},
     ["@markup.strong"] = {fg = c.mainText, bold = true},
     ["@markup.link.label.markdown_inline"] = { fg = c.lainoak,bold = true, underline = true }, -- el [texto]
 
   ["@lsp.type.enumMember.markdown"] = {fg = c.commentText},
-    ["@markup.heading.1.markdown"] = {link = "@Constant"},
-    ["@markup.heading.2.markdown"] = {link = "Keyword"},
+    ["@markup.heading.1.markdown"] = {link = "@Constant", bold = true},
+    ["@markup.heading.2.markdown"] = { link = "@attribute"},
     ["@markup.heading.3.markdown"] = {link = "@Method"},
     ["@markup.heading.4.markdown"] = {link = "@Function"},
     ["@markup.heading.5.markdown"] = {link = "@Type"},
     ["@markup.heading.6.markdown"] = {link = "@Variable"},
+    ["@markup.list.markdown"] = {link = "@keyword"},
   ["@org.headline.level1.org"] = {link = "@Constant"},
   ["@org.headline.level2.org"] = {link = "@Type"},
   ["@org.headline.level3.org"] = {link = "@Method"},

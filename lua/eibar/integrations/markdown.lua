@@ -29,6 +29,9 @@ function M.get(c, opts)
     },
     RenderMarkdownWikiLink = {
       link = "@RenderMarkdownLink"
+    },
+RenderMarkdownBullet = {
+      link = "@keyword"
     }
   }
 end
