@@ -2,7 +2,8 @@ local config = {
 	defaults = {
 		theme = "dark",
 		transparent = false,
-		background_style = "normal", -- Options: "normal", "contrast", "cyan"
+		-- WARN: not working on config
+		background_style = "solar_des", -- Options: "normal", "contrast", "cyan", "kanagawa"
 		italics = {
 			comments = true,
 			keywords = true,

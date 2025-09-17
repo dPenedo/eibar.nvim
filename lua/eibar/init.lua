@@ -21,9 +21,9 @@ function M.colorscheme()
 		return
 	end
 
-	vim.api.nvim_command("hi clear")
+	vim.cmd("hi clear")
 	if vim.fn.exists("syntax_on") == 1 then
-		vim.api.nvim_command("syntax reset")
+		vim.cmd("syntax reset")
 	end
 
 	vim.g.VM_theme_set_by_colorscheme = true
@@ -31,7 +31,6 @@ function M.colorscheme()
 	vim.g.colors_name = "eibar"
 
 	local colors = colors_module.setup()
-
 	terminal.set(colors)
 
 	local groups = groups_module.get_groups(colors, config, utils)
@@ -47,8 +46,33 @@ function M.colorscheme()
 	groups = vim.tbl_extend("force", groups, user_overrides)
 
 	for group, opts in pairs(groups) do
+		if group == "Normal" and config.transparent then
+			opts.bg = "none"
+		end
 		vim.api.nvim_set_hl(0, group, opts)
 	end
 end
+
+-- WARN: not working
+local function set_background(style)
+	local valid = { normal = true, contrast = true, cyan = true }
+	if not valid[style] then
+		vim.notify("Eibar: background inválido (" .. style .. ")", vim.log.levels.ERROR)
+		return
+	end
+
+	config.background_style = style
+	vim.cmd("colorscheme eibar")
+	vim.notify("Eibar background set to " .. style, vim.log.levels.INFO)
+end
+
+vim.api.nvim_create_user_command("EibarBackground", function(opts)
+	set_background(opts.args)
+end, {
+	nargs = 1,
+	complete = function()
+		return { "normal", "contrast", "cyan" }
+	end,
+})
 
 return M
