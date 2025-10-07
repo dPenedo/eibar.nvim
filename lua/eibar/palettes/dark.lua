@@ -9,6 +9,14 @@ local backgrounds = {
 		base04 = "#393939",
 		base05 = "#3d3d3d",
 	},
+	eibar = {
+		base00 = "#1E2424", -- bg principal
+		base01 = "#272F2F", -- bg panel
+		base02 = "#2B3333",
+		base03 = "#303838",
+		base04 = "#394242",
+		base05 = "#3D4747",
+	},
 	contrast = {
 		base00 = "#0d0d0d",
 		base01 = "#151515",
@@ -46,8 +54,8 @@ local backgrounds = {
 		base00 = "#08111F", -- entre #101618 y #001E27
 		base01 = "#0B1A26", -- entre #161D20 y #00232C
 		base02 = "#0F252B", -- entre #1A2224 y #042D33
-		base03 = "#0F252B", -- igual que base02
-		base04 = "#152B36", -- entre #252B2D y #053343
+		base03 = "#10272D",
+		base04 = "#063A4C", -- entre #252B2D y #053343
 		base05 = "#424C52", -- entre #454E53 y #3B4750
 	},
 	slate = {
@@ -100,8 +108,9 @@ return {
 	warningText = "#E3CF91",
 	egoIbaia = "#71A2C6",
 	syntaxFunction = "#9BAFE8",
-	morea = "#B8A7DD",
+	morea = "#BBA3EF",
 	keyword = "#D788AB",
+	keywordSpecial = "#DA684F", -- Notablemente más rojizo
 	torreIpurua = "#EDB397",
 	sanAndres = "#DFBC90",
 	untzaga = "#D98363",

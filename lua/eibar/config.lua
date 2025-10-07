@@ -3,7 +3,7 @@ local config = {
 		theme = "dark",
 		transparent = false,
 		-- WARN: not working on config
-		background_style = "solar_des", -- Options: "normal", "contrast", "cyan", "kanagawa"
+		background_style = "kanagawa", -- Options: "normal", "contrast", "cyan", "kanagawa"
 		italics = {
 			comments = true,
 			keywords = true,
