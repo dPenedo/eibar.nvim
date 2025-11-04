@@ -9,6 +9,14 @@ local backgrounds = {
 		base04 = "#393939",
 		base05 = "#3d3d3d",
 	},
+	clean = {
+		base00 = "#222222",
+		base01 = "#222222",
+		base02 = "#222222",
+		base03 = "#303030",
+		base04 = "#393939",
+		base05 = "#505050",
+	},
 	eibar = {
 		base00 = "#1E2424", -- bg principal
 		base01 = "#272F2F", -- bg panel
@@ -17,9 +25,17 @@ local backgrounds = {
 		base04 = "#394242",
 		base05 = "#3D4747",
 	},
+	gruv = {
+		base00 = "#282828",
+		base01 = "#32302f",
+		base02 = "#32302f",
+		base03 = "#45403d",
+		base04 = "#45403d",
+		base05 = "#5a524c",
+	},
 	contrast = {
 		base00 = "#0d0d0d",
-		base01 = "#151515",
+		base01 = "#ff1515",
 		base02 = "#1c1c1c",
 		base03 = "#2d2d2d",
 		base04 = "#3d3d3d",
@@ -98,6 +114,7 @@ return {
 	menuOptionBg = "#4A5AA8",
 	mainText = "#ECEAE4",
 	sanBlas = "#F0E7D5",
+	-- sanBlas = "#EDECE3",
 	lineNumberText = "#6A6F80",
 	lainoak = "#B5C1E3",
 	commentText = "#83796C",

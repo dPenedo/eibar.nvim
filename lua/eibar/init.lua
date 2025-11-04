@@ -62,7 +62,12 @@ local function set_background(style)
 	end
 
 	config.background_style = style
-	vim.cmd("colorscheme eibar")
+
+	package.loaded["eibar.theme"] = nil
+	package.loaded["eibar.base_groups"] = nil
+
+	M.colorscheme()
+
 	vim.notify("Eibar background set to " .. style, vim.log.levels.INFO)
 end
 
