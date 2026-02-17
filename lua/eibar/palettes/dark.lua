@@ -1,5 +1,3 @@
-local config = require("eibar.config")
-
 local backgrounds = {
 	normal = {
 		base00 = "#101010",
@@ -35,7 +33,7 @@ local backgrounds = {
 	},
 	contrast = {
 		base00 = "#0d0d0d",
-		base01 = "#ff1515",
+		base01 = "#101010",
 		base02 = "#1c1c1c",
 		base03 = "#2d2d2d",
 		base04 = "#3d3d3d",
@@ -98,38 +96,52 @@ local backgrounds = {
 		base04 = "#313245",
 		base05 = "#313245",
 	},
+	eyecare = {
+		base00 = "#1C1916", -- warm dark brown, minimal blue light
+		base01 = "#23201B", -- slightly lighter, keeps warmth
+		base02 = "#2A2621", -- subtle separation, no harsh edges
+		base03 = "#322D27", -- gentle step up
+		base04 = "#3B352E", -- borders and UI elements
+		base05 = "#4A4239", -- muted warm gray
+	},
 }
 
-local bgs = backgrounds[config.background_style] or backgrounds.normal
+local function get_palette()
+	local config = require("eibar.config")
+	local bgs = backgrounds[config.background_style] or backgrounds.normal
 
-return {
-	base00 = bgs.base00,
-	base01 = bgs.base01,
-	base02 = bgs.base02,
-	base03 = bgs.base03,
-	base04 = bgs.base04,
-	base05 = bgs.base05,
-	focusedBorder = "#2E323D",
-	windowBorder = "#464E77",
-	menuOptionBg = "#4A5AA8",
-	mainText = "#ECEAE4",
-	sanBlas = "#F0E7D5",
-	-- sanBlas = "#EDECE3",
-	lineNumberText = "#6A6F80",
-	lainoak = "#B5C1E3",
-	commentText = "#83796C",
-	syntaxError = "#D1484E",
-	arrate = "#95B987",
-	astelehena = "#4AAE84",
-	damasquinado = "#E9C86B",
-	warningText = "#E3CF91",
-	egoIbaia = "#71A2C6",
-	syntaxFunction = "#9BAFE8",
-	morea = "#BBA3EF",
-	keyword = "#D788AB",
-	keywordSpecial = "#DA684F", -- Notablemente más rojizo
-	torreIpurua = "#EDB397",
-	sanAndres = "#DFBC90",
-	untzaga = "#D98363",
-	cementBH = "#85A7AD",
-}
+	return {
+		base00 = bgs.base00,
+		base01 = bgs.base01,
+		base02 = bgs.base02,
+		base03 = bgs.base03,
+		base04 = bgs.base04,
+		base05 = bgs.base05,
+		focusedBorder = "#2E323D",
+		windowBorder = "#464E77",
+		menuOptionBg = "#4A5AA8",
+		mainText = "#ECEAE4",
+		sanBlas = "#F0E7D5",
+		sanBlas = "#edE7D5",
+		-- sanBlas = "#EDECE3",
+		lineNumberText = "#6A6F80",
+		lainoak = "#B5C1E3",
+		commentText = "#83796C",
+		syntaxError = "#D1484E",
+		arrate = "#95B987",
+		astelehena = "#4AAE84",
+		damasquinado = "#E9C86B",
+		warningText = "#E3CF91",
+		egoIbaia = "#71A2C6",
+		syntaxFunction = "#9BAFE8",
+		morea = "#BBA3EF",
+		keyword = "#D788AB",
+		keywordSpecial = "#DA684F", -- Notablemente más rojizo
+		torreIpurua = "#EDB397",
+		sanAndres = "#DFBC90",
+		untzaga = "#D98363",
+		cementBH = "#85A7AD",
+	}
+end
+
+return get_palette

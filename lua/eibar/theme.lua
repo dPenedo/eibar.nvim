@@ -7,7 +7,8 @@ local palettes = {
 
 function M.setup()
 	local background = vim.o.background
-	return palettes[background] or palettes.dark
+	local palette_fn = palettes[background] or palettes.dark
+	return palette_fn()
 end
 
 return M

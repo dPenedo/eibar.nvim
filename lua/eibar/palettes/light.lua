@@ -1,44 +1,43 @@
-local config = require("eibar.config")
-
-return {
+local function get_palette()
+	local config = require("eibar.config")
+	return {
 	-- Fondos muy claros con tonos grises
-	base00 = "#eeeeee", -- Fondo más blanco (antes #161616)
-	base01 = config.transparent and "none" or "#ededed", -- Gris muy claro (antes #222222)
-	base02 = "#EAEAEA", -- Gris claro (antes #282828)
-	base03 = "#DDDDDD", -- Gris medio claro (antes #343434)
-	base04 = "#D0D0D0", -- Gris medio (antes #404040)
-	base05 = "#999999", -- Gris más oscuro para texto secundario (antes #555555)
-
+	base00 = "#eeeeee", -- Fondo más blanco
+	base01 = config.transparent and "none" or "#ededed", -- Gris muy claro
+	base02 = "#EAEAEA", -- Gris claro
+	base03 = "#DDDDDD", -- Gris medio claro
+	base04 = "#D0D0D0", -- Gris medio
+	base05 = "#999999", -- Gris más oscuro para texto secundario
 	-- Bordes
-	focusedBorder = "#C8CCD7", -- Más claro que el original #2E323D
-	windowBorder = "#B8BCC8", -- Más claro que el original #373B48
+	focusedBorder = "#C8CCD7",
+	windowBorder = "#B8BCC8",
 
-	-- Textos y elementos principales (oscuros para contraste)
-	mainText = "#2A2A2A", -- Texto principal oscuro (antes #E2E0DB)
-	sanBlas = "#3A3A3A", -- Más oscuro que el original #F0E7D5
-	lineNumberText = "#717686", -- Similar luminosidad pero invertido
-	lainoak = "#4A5E8D", -- Azul más oscuro (antes #B5C1E3)
-	commentText = "#726868", -- Gris cálido oscuro (antes #9D9390)
-
-	-- Colores de sintaxis (versiones más oscuras)
-	syntaxError = "#8F1C22", -- Rojo intenso (antes #B0282E)
-	arrate = "#3A6D3A", -- Verde bosque (antes #558757)
-	astelehena = "#1A7A50", -- Verde esmeralda oscuro (antes #2A8E64)
-	damasquinado = "#A58828", -- Amarillo mostaza (antes #C9A83B)
-	warningText = "#8F7A40", -- Amarillo tierra (antes #B39F61)
-	egoIbaia = "#3A72A2", -- Azul petróleo (antes #5692C2)
-	syntaxFunction = "#3A4F9D", -- Azul real (antes #5B6FB8)
-	morea = "#5A4D8A", -- Púrpura intenso (antes #7B6DA5)
-	keyword = "#7A4562", -- Borgoña (antes #A56382)
-	torreIpurua = "#A57347", -- Naranja terracota (antes #CD9367)
-	sanAndres = "#9A854C", -- Beige oscuro intenso (antes #BEAA76)
-
+	-- Textos y elementos principales (más oscuros para mayor contraste)
+	mainText = "#1a1a1a", -- Texto principal muy oscuro (antes #2A2A2A)
+	sanBlas = "#2a2a2a", -- Muy oscuro (antes #3A3A3A)
+	lineNumberText = "#B8BCC8",
+	lainoak = "#2d4470", -- Azul más intenso (antes #4A5E8D)
+	commentText = "#a8a0a0", -- Gris cálido MUY claro para comentarios (antes #726868)
+	-- Colores de sintaxis (más saturados y oscuros)
+	syntaxError = "#c71f28", -- Rojo muy intenso (antes #8F1C22)
+	arrate = "#2d5a2d", -- Verde bosque intenso (antes #3A6D3A)
+	astelehena = "#0d6642", -- Verde esmeralda muy oscuro (antes #1A7A50)
+	damasquinado = "#967718", -- Amarillo mostaza intenso (antes #A58828)
+	warningText = "#7d6830", -- Amarillo tierra intenso (antes #8F7A40)
+	egoIbaia = "#236196", -- Azul petróleo intenso (antes #3A72A2)
+	syntaxFunction = "#2a3d8a", -- Azul real intenso (antes #3A4F9D)
+	morea = "#4a3877", -- Púrpura muy intenso (antes #5A4D8A)
+	keyword = "#66334d", -- Borgoña intenso (antes #7A4562)
+	torreIpurua = "#8f5d35", -- Naranja terracota intenso (antes #A57347)
+	sanAndres = "#7a6135", -- Beige oscuro muy intenso (antes #9A854C)
+	keywordSpecial = "#a33d27", -- Notablemente más rojizo
 	-- Acentos
-	untzaga = "#8F4A2A",
-
+	untzaga = "#b55936", -- Más oscuro e intenso
 	-- Buscar
-	cementBH = "#7A7263", -- Verde militar oscuro (antes #A59E8F)
-
+	cementBH = "#685f50", -- Verde militar más oscuro (antes #7A7263)
 	-- Elementos de UI
-	menuOptionBg = "#2A3B88", -- Azul marino intenso (antes #3A4B98)
+	menuOptionBg = "#1a2b75", -- Azul marino muy intenso (antes #2A3B88)
 }
+end
+
+return get_palette

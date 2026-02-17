@@ -2,8 +2,7 @@ local config = {
 	defaults = {
 		theme = "dark",
 		transparent = false,
-		-- WARN: not working on config
-		background_style = "clean", -- Options: "normal", "contrast", "cyan", "kanagawa"
+		background_style = "normal",
 		italics = {
 			comments = true,
 			keywords = true,
