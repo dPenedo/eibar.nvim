@@ -9,7 +9,7 @@ function M.get(c, opts)
 		},
 		FlashLabel = {
 			fg = c.base01,
-			bg = c.untzaga,
+			bg = c.damasquinado,
 			bold = true,
 		},
 		--Snacks

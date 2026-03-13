@@ -2,10 +2,10 @@ local M = {}
 
 function M.get_groups(c, config, utils)
 	local bg = config.transparent and "NONE" or c.base01
-	local diff_add = utils.shade(c.astelehena, 0.5, c.base01)
-	local diff_delete = utils.shade(c.syntaxError, 0.5, c.base01)
-	local diff_change = utils.shade(c.syntaxFunction, 0.5, c.base01)
-	local diff_text = utils.shade(c.warningText, 0.5, c.base01)
+	local diff_add_bg = utils.mix(c.astelehena, c.base01, 0.15)
+	local diff_delete_bg = utils.mix(c.syntaxError, c.base01, 0.15)
+	local diff_change_bg = utils.mix(c.syntaxFunction, c.base01, 0.12)
+	local diff_text_bg = utils.mix(c.warningText, c.base01, 0.30)
 
 	local groups = {
 		-- base
@@ -22,10 +22,10 @@ function M.get_groups(c, config, utils)
 		CursorLineNr = { fg = c.torreIpurua, bg = c.base02 },
 		CursorColumn = { link = "CursorLine" },
 		Directory = { fg = c.syntaxFunction },
-		DiffAdd = { bg = bg, fg = diff_add },
-		DiffChange = { bg = bg, fg = diff_change },
-		DiffDelete = { bg = bg, fg = diff_delete },
-		DiffText = { bg = bg, fg = diff_text },
+		DiffAdd = { bg = diff_add_bg, fg = c.astelehena },
+		DiffChange = { bg = diff_change_bg, fg = c.syntaxFunction },
+		DiffDelete = { bg = diff_delete_bg, fg = c.syntaxError },
+		DiffText = { bg = diff_text_bg, fg = c.base01 },
 		EndOfBuffer = { fg = c.morea },
 		TermCursor = { link = "Cursor" },
 		TermCursorNC = { link = "Cursor" },
@@ -55,7 +55,7 @@ function M.get_groups(c, config, utils)
 		},
 		PmenuThumb = { bg = utils.shade(c.base01, 0.20) },
 		Question = { fg = c.syntaxFunction },
-		QuickFixLine = { fg = c.syntaxFunction },
+		QuickFixLine = { bg = utils.mix(c.egoIbaia, c.base01, 0.33), bold = true },
 		SpecialKey = { fg = c.keyword },
 		StatusLine = { bg = c.base04, fg = c.lainoak },
 		StatusLineNC = {
@@ -78,7 +78,7 @@ function M.get_groups(c, config, utils)
 		SpellRare = { undercurl = true, sp = c.warningText },
 		Title = { fg = c.syntaxFunction },
 		Visual = {
-			bg = utils.shade(c.syntaxFunction, 0.40, c.base01),
+			bg = utils.shade(c.menuOptionBg, 0.90, c.base05),
 		},
 		VisualNOS = { link = "Visual" },
 		WarningMsg = { fg = c.warningText, bg = c.base03 },
