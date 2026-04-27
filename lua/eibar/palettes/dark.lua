@@ -16,12 +16,12 @@ local backgrounds = {
 		base05 = "#505050",
 	},
 	eibar = {
-		base00 = "#1E2424", -- bg principal
-		base01 = "#272F2F", -- bg panel
-		base02 = "#2B3333",
-		base03 = "#303838",
-		base04 = "#394242",
-		base05 = "#3D4747",
+		base00 = "#1e2323",
+		base01 = "#1d2323",
+		base02 = "#202727",
+		base03 = "#2A3333",
+		base04 = "#364242",
+		base05 = "#3C4848",
 	},
 	gruv = {
 		base00 = "#282828",
@@ -96,6 +96,14 @@ local backgrounds = {
 		base04 = "#313245",
 		base05 = "#313245",
 	},
+	everforest = {
+		base00 = "#1E2326",
+		base01 = "#272E33",
+		base02 = "#2E383C",
+		base03 = "#374145",
+		base04 = "#414B50",
+		base05 = "#495156",
+	},
 	eyecare = {
 		base00 = "#1C1916", -- warm dark brown, minimal blue light
 		base01 = "#23201B", -- slightly lighter, keeps warmth
@@ -117,29 +125,40 @@ local function get_palette()
 		base03 = bgs.base03,
 		base04 = bgs.base04,
 		base05 = bgs.base05,
+		-- UI
 		focusedBorder = "#252E3A",
-		windowBorder = "#354E6A",
+		windowBorder = "#35626a",
 		menuOptionBg = "#3A5272", -- RENOM
+
+		-- Text
 		mainText = "#ECEAE4",
 		-- sanBlas = "#F0E7D5",
 		-- sanBlas = "#EDECE3",
-		sanBlas = "#edE7D5",
+		-- sanBlas = "#edE7D5",
+		sanBlas = "#dadbd5",
 		lineNumberText = "#6A6F80", --burdina? Coliseo?
-		lainoak = "#B5C1E3",
 		commentText = "#83796C", -- RENOM
-		syntaxError = "#D1484E",
-		arrate = "#95B987",
-		astelehena = "#4AAE84",
-		damasquinado = "#E9C86B",
-		warningText = "#E3CF91", -- RENOM
+		-- Syntax
+		-- lainoak = "#B5C1E3",
+		lainoak = "#9da7cd",
 		egoIbaia = "#71A2C6",
 		syntaxFunction = "#9BAFE8", -- RENOM
 		morea = "#BBA3EF",
-		keyword = "#D788AB", -- RENOM
+		-- morea = "#607853",
+
+		keyword = "#A68CAA", -- RENOM
 		keywordSpecial = "#DA684F", -- RENOM
+		arrate = "#95B987",
+		-- arrate = "#82ba9b",
+		astelehena = "#4AAE84",
+		damasquinado = "#c1a559",
 		torreIpurua = "#EDB397",
 		sanAndres = "#DFBC90",
 		untzaga = "#D98363",
+
+		-- Diagnostics
+		syntaxError = "#D1484E",
+		warningText = "#e5db92",
 		cementBH = "#85A7AD",
 	}
 end

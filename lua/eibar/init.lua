@@ -68,7 +68,7 @@ end, {
 		return {
 			"normal", "clean", "eibar", "gruv", "contrast",
 			"cyan", "nord", "solarized_dark", "solar_des",
-			"slate", "kanagawa", "mocha", "eyecare",
+			"slate", "kanagawa", "mocha", "eyecare", "everforest",
 		}
 	end,
 })
