@@ -128,16 +128,14 @@ local function get_palette()
 		-- UI
 		focusedBorder = "#252E3A",
 		windowBorder = "#35626a",
-		menuOptionBg = "#3A5272", -- RENOM
 
 		-- Text
 		mainText = "#ECEAE4",
-		-- sanBlas = "#F0E7D5",
-		-- sanBlas = "#EDECE3",
-		-- sanBlas = "#edE7D5",
-		sanBlas = "#dadbd5",
+		-- sanBlas = "#dadbd5",
+		sanBlas = "#d7d2be",
 		lineNumberText = "#6A6F80", --burdina? Coliseo?
 		commentText = "#83796C", -- RENOM
+
 		-- Syntax
 		-- lainoak = "#B5C1E3",
 		lainoak = "#9da7cd",
