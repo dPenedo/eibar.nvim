@@ -16,7 +16,7 @@ function M.set(colors)
 	vim.g.terminal_color_12 = colors.cementBH
 	vim.g.terminal_color_13 = colors.syntaxError
 	vim.g.terminal_color_14 = colors.astelehena
-	vim.g.terminal_color_15 = colors.commentText
+	vim.g.terminal_color_15 = colors.lainoak
 	vim.g.terminal_color_background = colors.base01
 	vim.g.terminal_color_foreground = colors.mainText
 end

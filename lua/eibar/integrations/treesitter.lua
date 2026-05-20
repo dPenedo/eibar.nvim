@@ -148,7 +148,7 @@ function M.get(c, config, utils)
     ["@markup.heading.6.markdown"] = {link = "@Variable"},
     ["@markup.list.markdown"] = {link = "@keyword"},
     ["@markup.raw.block.markdown"] = { link = "String" },
-    ["@markup.raw.markdown_inline"] = { link = "StrinColorColumng" },
+    ["@markup.raw.markdown_inline"] = { fg = c.sanAndres, bg = c.base03 },
   ["@org.headline.level1.org"] = {link = "@Constant"},
   ["@org.headline.level2.org"] = {link = "@Type"},
   ["@org.headline.level3.org"] = {link = "@Method"},

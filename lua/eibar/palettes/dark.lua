@@ -139,7 +139,7 @@ local function get_palette()
 		-- Syntax
 		-- lainoak = "#B5C1E3",
 		lainoak = "#9da7cd",
-		egoIbaia = "#71A2C6",
+		egoIbaia = "#71abc0",
 		syntaxFunction = "#9BAFE8", -- RENOM
 		morea = "#BBA3EF",
 		-- morea = "#607853",

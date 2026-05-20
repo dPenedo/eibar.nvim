@@ -57,7 +57,7 @@ function M.get_groups(c, config, utils)
 		Question = { fg = c.syntaxFunction },
 		QuickFixLine = { bg = utils.mix(c.egoIbaia, c.base01, 0.33), bold = true },
 		SpecialKey = { fg = c.keyword },
-		StatusLine = { bg = c.base04, fg = c.lainoak },
+		StatusLine = { bg = c.base03, fg = c.lainoak },
 		StatusLineNC = {
 			fg = c.sanBlas,
 			bg = c.base02,
