@@ -138,10 +138,17 @@ local function get_palette()
 
 		-- Syntax
 		-- lainoak = "#B5C1E3",
-		lainoak = "#9da7cd",
-		egoIbaia = "#71abc0",
-		syntaxFunction = "#9BAFE8", -- RENOM
+		-- syntaxFunction = "#9BAFE8", -- RENOM
+		-- syntaxFunction = "#86acdb", -- RENOM
+		syntaxFunction = "#a0a0dc",
 		morea = "#BBA3EF",
+		-- lainoak = "#7f8aad",
+		lainoak = "#a8b0c2",
+
+		-- #a8b0c2  — un escalón arriba, sigue siendo discreto
+		-- #aeb8ca  — más nube, más visible
+		-- #b0b8c8  — bastante más claro
+		egoIbaia = "#71abc0",
 		-- morea = "#607853",
 
 		keyword = "#A68CAA", -- RENOM
@@ -151,7 +158,7 @@ local function get_palette()
 		astelehena = "#4AAE84",
 		damasquinado = "#c1a559",
 		torreIpurua = "#EDB397",
-		sanAndres = "#DFBC90",
+		sanAndres = "#c8b485",
 		untzaga = "#D98363",
 
 		-- Diagnostics

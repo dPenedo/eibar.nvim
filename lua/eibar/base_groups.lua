@@ -63,12 +63,12 @@ function M.get_groups(c, config, utils)
 			bg = c.base02,
 		},
 		TabLine = {
-			bg = c.base03,
+			bg = c.base02,
 			fg = c.lineNumberText,
 		},
 		TabLineFill = { fg = c.lainoak },
 		TabLineSel = {
-			bg = c.focusedBorder,
+			bg = c.base05,
 			fg = c.sanBlas,
 		},
 		Search = { bg = utils.shade(c.windowBorder, 1, c.bg) },
