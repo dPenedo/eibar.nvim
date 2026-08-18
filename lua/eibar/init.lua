@@ -66,7 +66,7 @@ end, {
 	nargs = 1,
 	complete = function()
 		return {
-			"normal", "clean", "eibar", "gruv", "contrast",
+			"normal", "clean", "eibar", "sanblas", "gruv", "contrast",
 			"cyan", "nord", "solarized_dark", "solar_des",
 			"slate", "kanagawa", "mocha", "eyecare", "everforest",
 		}

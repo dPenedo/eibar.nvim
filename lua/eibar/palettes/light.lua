@@ -1,43 +1,64 @@
+local backgrounds = {
+	eibar = {
+		-- hue 162, inverso del eibar oscuro, saturación baja para que no tire a verde
+		base00 = "#ccd1d0",
+		base01 = "#c8cecd",
+		base02 = "#c4cbc9",
+		base03 = "#b7c2be",
+		base04 = "#a9b8b4",
+		base05 = "#8fa39d",
+	},
+	sanblas = {
+		base00 = "#d1cfcc",
+		base01 = "#cfcdc8",
+		base02 = "#cbc9c4",
+		base03 = "#c2bfb7",
+		base04 = "#b8b4a9",
+		base05 = "#a39e8f",
+	},
+}
+
 local function get_palette()
 	local config = require("eibar.config")
-	return {
-	-- Fondos muy claros con tonos grises
-	base00 = "#eeeeee", -- Fondo más blanco
-	base01 = config.transparent and "none" or "#ededed", -- Gris muy claro
-	base02 = "#EAEAEA", -- Gris claro
-	base03 = "#DDDDDD", -- Gris medio claro
-	base04 = "#D0D0D0", -- Gris medio
-	base05 = "#999999", -- Gris más oscuro para texto secundario
-	-- Bordes
-	focusedBorder = "#C8CCD7",
-	windowBorder = "#B8BCC8",
+	local bgs = backgrounds[config.background_style] or backgrounds.eibar
 
-	-- Textos y elementos principales (más oscuros para mayor contraste)
-	mainText = "#1a1a1a", -- Texto principal muy oscuro (antes #2A2A2A)
-	sanBlas = "#2a2a2a", -- Muy oscuro (antes #3A3A3A)
-	lineNumberText = "#B8BCC8",
-	lainoak = "#2d4470", -- Azul más intenso (antes #4A5E8D)
-	commentText = "#a8a0a0", -- Gris cálido MUY claro para comentarios (antes #726868)
-	-- Colores de sintaxis (más saturados y oscuros)
-	syntaxError = "#c71f28", -- Rojo muy intenso (antes #8F1C22)
-	arrate = "#2d5a2d", -- Verde bosque intenso (antes #3A6D3A)
-	astelehena = "#0d6642", -- Verde esmeralda muy oscuro (antes #1A7A50)
-	damasquinado = "#967718", -- Amarillo mostaza intenso (antes #A58828)
-	warningText = "#7d6830", -- Amarillo tierra intenso (antes #8F7A40)
-	egoIbaia = "#236196", -- Azul petróleo intenso (antes #3A72A2)
-	syntaxFunction = "#2a3d8a", -- Azul real intenso (antes #3A4F9D)
-	morea = "#4a3877", -- Púrpura muy intenso (antes #5A4D8A)
-	keyword = "#66334d", -- Borgoña intenso (antes #7A4562)
-	torreIpurua = "#8f5d35", -- Naranja terracota intenso (antes #A57347)
-	sanAndres = "#7a6135", -- Beige oscuro muy intenso (antes #9A854C)
-	keywordSpecial = "#a33d27", -- Notablemente más rojizo
-	-- Acentos
-	untzaga = "#b55936", -- Más oscuro e intenso
-	-- Buscar
-	cementBH = "#685f50", -- Verde militar más oscuro (antes #7A7263)
-	-- Elementos de UI
-	menuOptionBg = "#1a2b75", -- Azul marino muy intenso (antes #2A3B88)
-}
+	return {
+		base00 = bgs.base00,
+		base01 = bgs.base01,
+		base02 = bgs.base02,
+		base03 = bgs.base03,
+		base04 = bgs.base04,
+		base05 = bgs.base05,
+		-- UI
+		focusedBorder = "#A9B7CC",
+		windowBorder = "#265B64",
+
+		-- Text
+		mainText = "#272620",
+		sanBlas = "#201D13",
+		lineNumberText = "#5F7C7C",
+		commentText = "#968670",
+
+		-- Syntax
+		syntaxFunction = "#204080",
+		morea = "#543e87",
+		lainoak = "#404A6C",
+		egoIbaia = "#215466",
+
+		keyword = "#6A2C74",
+		keywordSpecial = "#863522",
+		arrate = "#2E5420",
+		astelehena = "#205C44",
+		damasquinado = "#68541D",
+		torreIpurua = "#6E4428",
+		sanAndres = "#605328",
+		untzaga = "#823C24",
+
+		-- Diagnostics
+		syntaxError = "#8E262B",
+		warningText = "#5D5623",
+		cementBH = "#386066",
+	}
 end
 
 return get_palette

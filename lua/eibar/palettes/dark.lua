@@ -16,10 +16,11 @@ local backgrounds = {
 		base05 = "#505050",
 	},
 	eibar = {
-		base00 = "#1e2323",
-		base01 = "#1d2323",
-		base02 = "#202727",
-		base03 = "#2A3333",
+		-- hue 162
+		base00 = "#1a1f1e",
+		base01 = "#1e2422",
+		base02 = "#252d2b",
+		base03 = "#303a37",
 		base04 = "#364242",
 		base05 = "#3C4848",
 	},
@@ -130,18 +131,21 @@ local function get_palette()
 		windowBorder = "#35626a",
 
 		-- Text
-		mainText = "#ECEAE4",
+		-- mainText = "#ECEAE4",
+		mainText = "#C8C6C0",
 		-- sanBlas = "#dadbd5",
 		sanBlas = "#d7d2be",
-		lineNumberText = "#6A6F80", --burdina? Coliseo?
-		commentText = "#83796C", -- RENOM
+		lineNumberText = "#3C4848", -- Take it from base05?
+		-- commentText = "#83796C", -- RENOM
+		commentText = "#6e655a", -- RENOM
 
 		-- Syntax
 		-- lainoak = "#B5C1E3",
 		-- syntaxFunction = "#9BAFE8", -- RENOM
 		-- syntaxFunction = "#86acdb", -- RENOM
-		syntaxFunction = "#a0a0dc",
-		morea = "#BBA3EF",
+		-- syntaxFunction = "#a0a0dc",
+		syntaxFunction = "#7e9cd8",
+		morea = "#BBA3EF", -- demasiado brilloso
 		-- lainoak = "#7f8aad",
 		lainoak = "#a8b0c2",
 
@@ -165,6 +169,14 @@ local function get_palette()
 		syntaxError = "#D1484E",
 		warningText = "#e5db92",
 		cementBH = "#85A7AD",
+
+		-- more smooth
+		keywordSpecial = "#B96552",
+		astelehena = "#3F9272",
+		torreIpurua = "#C4917C",
+		untzaga = "#B66F57",
+		syntaxError = "#B84248",
+		warningText = "#B9B174",
 	}
 end
 
