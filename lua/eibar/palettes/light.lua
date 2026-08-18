@@ -40,10 +40,11 @@ local function get_palette()
 		commentText = "#968670",
 
 		-- Syntax
-		syntaxFunction = "#204080",
-		morea = "#543e87",
+		syntaxFunction = "#394b6e",
+		morea = "#504666",
 		lainoak = "#404A6C",
-		egoIbaia = "#215466",
+		-- egoIbaia = "#215466",
+		egoIbaia = "#497180",
 
 		keyword = "#6A2C74",
 		keywordSpecial = "#863522",
