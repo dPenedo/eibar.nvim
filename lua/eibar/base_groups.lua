@@ -2,14 +2,16 @@ local M = {}
 
 function M.get_groups(c, config, utils)
 	local bg = config.transparent and "NONE" or c.base01
-	local diff_add_bg = utils.mix(c.astelehena, c.base01, 0.15)
-	local diff_delete_bg = utils.mix(c.syntaxError, c.base01, 0.15)
-	local diff_change_bg = utils.mix(c.syntaxFunction, c.base01, 0.12)
-	local diff_text_bg = utils.mix(c.warningText, c.base01, 0.30)
+	local diff_add_bg = utils.mix(c.astelehena, c.base02, 0.15)
+	local diff_delete_bg = utils.mix(c.syntaxError, c.base02, 0.15)
+	local diff_change_bg = utils.mix(c.syntaxFunction, c.base02, 0.12)
+	local diff_text_bg = utils.mix(c.warningText, c.base02, 0.30)
 
 	local groups = {
 		-- base
 		Normal = { fg = c.sanBlas, bg = bg },
+		-- TODO: make it optional on the config
+		NormalNC = { fg = c.sanBlas, bg = c.base02 },
 		ColorColumn = {
 			bg = c.base03,
 		},
@@ -47,9 +49,14 @@ function M.get_groups(c, config, utils)
 		MoreMsg = { fg = c.syntaxFunction },
 		NonText = { fg = utils.shade(c.base01, 0.30) },
 		NormalFloat = { bg = c.base04 },
-		NormalNC = { link = "Normal" },
 		Pmenu = { link = "NormalFloat" },
-		PmenuSel = { bg = c.windowBorder },
+		-- PmenuSel se calcula contra base04 (fondo real de NormalFloat/Pmenu),
+		-- no contra base00, si no en claro apenas se distingue de la fila sin seleccionar
+		PmenuSel = {
+			bg = vim.o.background == "light"
+				and utils.shade(c.windowBorder, 0.55, c.base04)
+				or utils.shade(c.windowBorder, 0.90, c.base05),
+		},
 		PmenuSbar = {
 			bg = utils.shade(c.syntaxFunction, 0.5, c.base01),
 		},
@@ -71,19 +78,33 @@ function M.get_groups(c, config, utils)
 			bg = c.base05,
 			fg = c.sanBlas,
 		},
-		Search = { bg = utils.shade(c.windowBorder, 1, c.bg) },
+		Search = {
+			bg = vim.o.background == "light"
+				and utils.shade(c.windowBorder, 0.35, c.base00)
+				or utils.shade(c.windowBorder, 0.90, c.base05),
+		},
 		SpellBad = { undercurl = true, sp = c.syntaxError },
 		SpellCap = { undercurl = true, sp = c.syntaxFunction },
 		SpellLocal = { undercurl = true, sp = c.morea },
 		SpellRare = { undercurl = true, sp = c.warningText },
 		Title = { fg = c.syntaxFunction },
 		Visual = {
-			bg = utils.shade(c.windowBorder, 0.90, c.base05),
+			bg = vim.o.background == "light"
+				and utils.shade(c.windowBorder, 0.35, c.base00)
+				or utils.shade(c.windowBorder, 0.90, c.base05),
 		},
 		VisualNOS = { link = "Visual" },
 		WarningMsg = { fg = c.warningText, bg = c.base03 },
 		Whitespace = { fg = c.cementBH },
-		WildMenu = { bg = c.windowBorder },
+		WildMenu = {
+			bg = vim.o.background == "light"
+				and utils.shade(c.windowBorder, 0.35, c.base00)
+				or utils.shade(c.windowBorder, 0.90, c.base05),
+		},
+		-- WinBar		Window bar of current window.
+		WinBar = { fg = c.cementBH, bg = "NONE" },
+		-- WinBarNC	Window bar of not-current windows.
+		WinBarNC = { fg = c.commentText, bg = "NONE" },
 		Comment = {
 			fg = c.commentText,
 			italic = config.italics.comments or false,
