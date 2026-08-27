@@ -6,7 +6,7 @@ local backgrounds = {
 		base02 = "#c4cbc9",
 		base03 = "#b7c2be",
 		base04 = "#a9b8b4",
-		base05 = "#8fa39d",
+		base05 = "#9fb5af",
 	},
 	sanblas = {
 		base00 = "#d1cfcc",
@@ -36,7 +36,7 @@ local function get_palette()
 		-- Text
 		mainText = "#272620",
 		sanBlas = "#201D13",
-		lineNumberText = "#5F7C7C",
+		lineNumberText = "#749999",
 		commentText = "#968670",
 
 		-- Syntax
