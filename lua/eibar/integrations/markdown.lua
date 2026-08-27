@@ -30,9 +30,13 @@ function M.get(c, opts)
     RenderMarkdownWikiLink = {
       link = "@RenderMarkdownLink"
     },
-RenderMarkdownBullet = {
-      link = "@keyword"
-    }
+  RenderMarkdownBullet = {
+        link = "@variable"
+      },
+RenderMarkdownCodeInline  = {
+      bg = c.base02,
+      fg = c.sanAndres
+}
   }
 end
 
