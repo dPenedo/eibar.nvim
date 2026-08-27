@@ -10,6 +10,7 @@ local M = {
 		["flash"] = require("eibar.integrations.flash"),
 		["mini-files"] = require("eibar.integrations.mini-files"),
 		["neo-tree"] = require("eibar.integrations.neotree"),
+		["agentic"] = require("eibar.integrations.agentic"),
 	},
 }
 
