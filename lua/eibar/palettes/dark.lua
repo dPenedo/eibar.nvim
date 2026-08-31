@@ -139,11 +139,6 @@ local function get_palette()
 		-- commentText = "#83796C", -- RENOM
 		commentText = "#6e655a", -- RENOM
 
-		-- Syntax
-		-- lainoak = "#B5C1E3",
-		-- syntaxFunction = "#9BAFE8", -- RENOM
-		-- syntaxFunction = "#86acdb", -- RENOM
-		-- syntaxFunction = "#a0a0dc",
 		syntaxFunction = "#7e9cd8",
 		morea = "#BBA3EF", -- demasiado brilloso
 		-- lainoak = "#7f8aad",
@@ -156,21 +151,10 @@ local function get_palette()
 		-- morea = "#607853",
 
 		keyword = "#A68CAA", -- RENOM
-		keywordSpecial = "#DA684F", -- RENOM
 		arrate = "#95B987",
-		-- arrate = "#82ba9b",
-		astelehena = "#4AAE84",
 		damasquinado = "#c1a559",
-		torreIpurua = "#EDB397",
 		sanAndres = "#c8b485",
-		untzaga = "#D98363",
-
-		-- Diagnostics
-		syntaxError = "#D1484E",
-		warningText = "#e5db92",
 		cementBH = "#85A7AD",
-
-		-- more smooth
 		keywordSpecial = "#B96552",
 		astelehena = "#3F9272",
 		torreIpurua = "#C4917C",
