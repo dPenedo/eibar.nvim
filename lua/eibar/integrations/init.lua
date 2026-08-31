@@ -11,6 +11,7 @@ local M = {
 		["mini-files"] = require("eibar.integrations.mini-files"),
 		["neo-tree"] = require("eibar.integrations.neotree"),
 		["agentic"] = require("eibar.integrations.agentic"),
+		["gitsigns"] = require("eibar.integrations.gitsigns"),
 	},
 }
 
