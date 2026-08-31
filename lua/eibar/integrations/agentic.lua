@@ -40,7 +40,7 @@ function M.get(c, config, utils)
 		AgenticPermissionButtonInactive = { bg = c.base04, fg = c.commentText },
 
 		-- Título de la sidebar
-		AgenticTitle = { bg = c.egoIbaia, fg = c.base00, bold = true },
+		AgenticTitle = { bg = c.base02, fg = c.commentText },
 
 		-- Spinner
 		AgenticSpinnerGenerating = { fg = c.syntaxFunction, bold = true },

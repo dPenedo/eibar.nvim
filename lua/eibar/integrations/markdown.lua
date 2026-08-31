@@ -34,8 +34,9 @@ function M.get(c, opts)
         link = "@variable"
       },
 RenderMarkdownCodeInline  = {
-      bg = c.base02,
-      fg = c.sanAndres
+      -- bg = c.base02,
+      fg = c.cementBH,
+      italic = true
 }
   }
 end
