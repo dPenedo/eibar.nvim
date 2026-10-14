@@ -2,81 +2,110 @@
 
 # Eibar
 
-<br/>
-<br/>
+A dark and light colorscheme for Neovim.
 
-![preview](./assets/sample-preview.png)
-
-<br/>
-<br/>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/preview-light.png">
+  <img alt="Eibar preview" src="./assets/preview-dark.png">
+</picture>
 
 </div>
 
+## Requirements
+
+- Neovim 0.8+
+- `termguicolors` (set automatically by the colorscheme)
+
 ## Installation
 
-1. Using `Lazy`:
+With [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
-{ 'dpenedo/eibar.nvim' },
+{
+    "dPenedo/eibar.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require("eibar").setup({})
+        vim.cmd.colorscheme("eibar")
+    end,
+},
 ```
 
-2. Using `Packer`:
+## Usage
+
+Three colorschemes are available:
+
+- `eibar`: follows `vim.o.background`.
+- `eibar-dark`: sets `background=dark` and loads the dark palette.
+- `eibar-light`: sets `background=light` and loads the light palette.
 
 ```lua
-use 'dpenedo/eibar.nvim'
+vim.cmd.colorscheme("eibar")
 ```
 
 ## Configuration
 
-To configure the plugin, you can call require('eibar').setup({}), passing the table with the values in it. The following are the **defaults**:
+Call `setup()` before loading the colorscheme. These are the defaults:
 
 ```lua
-require('eibar').setup({
-    -- NOTE: if your configuration sets vim.o.background in your configuration for Neovim,
-    -- the following setting will do nothing, since it'll be overriden.
-    theme = 'dark', -- String: 'dark' or 'light', determines the colorscheme used
-    transparent = false, -- Boolean: Sets the background to transparent
+require("eibar").setup({
+    transparent = false, -- transparent background for Normal and lualine
+    background_style = "normal", -- see "Background styles" below
     italics = {
-        comments = true, -- Boolean: Italicizes comments
-        keywords = true, -- Boolean: Italicizes keywords
-        functions = true, -- Boolean: Italicizes functions
-        strings = true, -- Boolean: Italicizes strings
-        variables = true, -- Boolean: Italicizes variables
+        comments = true,
+        keywords = true,
+        functions = false,
+        parameter = true, -- parameters and LSP inlay hints
+        strings = true,
+        variables = false,
     },
-    overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
+    overrides = {}, -- table of highlight groups, or a function returning one
 })
 ```
 
-- **The `colorscheme()` function**
-
-This function can be used to set the colorscheme in your editor, however, if it doesn't work for you, you can always use `vim.cmd.colorscheme('eibar')`.
-
-### Specifics for Some Plugins
-
-#### Bufferline.nvim
-
-To use the theme with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim), you can use the following configuration:
+`overrides` is applied last, on top of every built-in group:
 
 ```lua
-require('bufferline').setup({
-    highlights = require('eibar').bufferline.highlights,
+require("eibar").setup({
+    overrides = {
+        Comment = { fg = "#7a8a87", italic = false },
+        CursorLine = { link = "Visual" },
+    },
+})
+```
+
+### Background styles
+
+`background_style` only changes the background shades (`base00` to `base05`); the syntax colors stay the same. The available styles are still experimental and may change: see the `backgrounds` table in [`palettes/dark.lua`](./lua/eibar/palettes/dark.lua) and [`palettes/light.lua`](./lua/eibar/palettes/light.lua). An unknown name falls back to the default of each palette.
+
+To try them live, use `:EibarBackground <style>` (it completes the names).
+
+## Integrations
+
+Highlights are included for:
+
+- Treesitter and LSP (semantic tokens, inlay hints, diagnostics)
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [snacks.nvim](https://github.com/folke/snacks.nvim)
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [barbar.nvim](https://github.com/romgrk/barbar.nvim)
+- [flash.nvim](https://github.com/folke/flash.nvim)
+- [mini.files](https://github.com/echasnovski/mini.files)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [agentic.nvim](https://github.com/carlos-algms/agentic.nvim)
+- Terminal colors (`terminal_color_0` to `terminal_color_15`)
+
+### Lualine
+
+```lua
+require("lualine").setup({
+    options = { theme = "eibar" },
 })
 ```
 
 ## Contributing
 
-Contributions are welcome, please open an issue if you encounter any bug or if you find any improvements are needed for the code, also feel free to open a PR.
-
-Take a look at the [Development Guide](./DEVELOPMENT_GUIDE.md)
-
-# lala
-
-## lala
-
-### lala
-
-### lala
-
-## lala
-
-# lala
+Issues and pull requests are welcome.
