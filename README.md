@@ -2,7 +2,7 @@
 
 # Eibar
 
-A dark and light colorscheme for Neovim.
+A dark and light colorscheme for Neovim inspired by the beauty of the Very Exemplary City of [Eibar](https://en.wikipedia.org/wiki/Eibar).
 
 **Dark**
 
