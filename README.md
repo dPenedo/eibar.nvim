@@ -4,10 +4,13 @@
 
 A dark and light colorscheme for Neovim.
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/preview-light.png">
-  <img alt="Eibar preview" src="./assets/preview-dark.png">
-</picture>
+**Dark**
+
+<img alt="Eibar dark preview" src="./assets/preview-dark.png">
+
+**Light**
+
+<img alt="Eibar light preview" src="./assets/preview-light.png">
 
 </div>
 
